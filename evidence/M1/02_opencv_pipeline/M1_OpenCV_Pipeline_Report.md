@@ -71,12 +71,12 @@ All visual evidence presented below was captured live during actual operation of
 ![High Confidence Enclosure Detection](./detection_screenshots/opencv_det_01_high_confidence_enclosure.jpg)
 
 * **Screenshot Title:** `opencv_det_01_high_confidence_enclosure.jpg`
-* **What is Being Detected:** The custom 3D-printed Raspberry Pi camera enclosure positioned squarely in the center of the camera field of view.
-* **What the Bounding Box Represents:** The green 3-pixel bounding box tightly bounds the physical outer geometry of the enclosure body, isolating it from the surrounding desktop surface.
-* **What the Confidence Score Represents:** A **93.3% confidence score** (`RASPBERY PI CAM ENCLOSURE: 93.3%`), indicating near-certain classification certainty by the YOLO26 Nano network.
+* **What is Being Detected:** The custom 3D-printed Raspberry Pi camera enclosure positioned in the active camera field of view on the bench setup.
+* **What the Bounding Box Represents:** The green 3-pixel bounding box tightly bounds the physical outer geometry of the enclosure body, isolating it from the holding hand and background.
+* **What the Confidence Score Represents:** A **72.1% confidence score** (`RASPBERRY PI CAM ENCLOSURE: 72.1%`), exceeding the 0.35 detection threshold.
 * **What the Screenshot Proves About the OpenCV Pipeline:**
-  1. The pipeline correctly unletterboxes coordinates from normalized $640 \times 640$ model space back to the native $640 \times 480$ frame buffer with zero spatial offset.
-  2. The HUD overlay correctly computes and renders live telemetry: `STATUS: DETECTED (1 Enclosure)`, `FPS: 3.4`, and `Latency: 390.9ms`.
+  1. The pipeline correctly unletterboxes coordinates from normalized $640 \times 640$ model space back to the native frame buffer with zero spatial offset.
+  2. The HUD overlay correctly computes and renders live telemetry: `STATUS: DETECTED (1 Enclosure)`, `FPS: 3.5`, and `Latency: 272.7ms`.
   3. The label tag background dynamically sizes to the rendered text width using `cv2.getTextSize`.
 
 ---
@@ -86,28 +86,28 @@ All visual evidence presented below was captured live during actual operation of
 ![Handheld Enclosure Detection](./detection_screenshots/opencv_det_02_handheld_enclosure.jpg)
 
 * **Screenshot Title:** `opencv_det_02_handheld_enclosure.jpg`
-* **What is Being Detected:** The camera enclosure held directly by a human hand during active movement.
+* **What is Being Detected:** The camera enclosure held directly by hand during active movement.
 * **What the Bounding Box Represents:** The green box isolates the physical enclosure housing, precisely omitting the holding thumb and fingers from the ground-truth prediction.
-* **What the Confidence Score Represents:** An **86.8% confidence score** (`RASPBERY PI CAM ENCLOSURE: 86.8%`), confirming that the model's feature extractor activates on the CAD enclosure features rather than human skin.
+* **What the Confidence Score Represents:** A **64.8% confidence score** (`RASPBERRY PI CAM ENCLOSURE: 64.8%`), confirming that the model's feature extractor activates on the CAD enclosure features rather than human skin.
 * **What the Screenshot Proves About the OpenCV Pipeline:**
-  1. Validates that the skin contamination issue identified during the Milestone 1 dataset audit was successfully resolved.
-  2. Demonstrates real-time tracking stability under handheld camera motion at `FPS: 3.3` and `Latency: 273.2ms`.
+  1. Validates that skin contamination is avoided and bounding boxes maintain tight structural fit.
+  2. Demonstrates real-time tracking stability under handheld camera motion at `FPS: 3.5` and `Latency: 283.3ms`.
   3. Confirms interactive confidence threshold filtering (`Conf: 0.35`) functions properly.
 
 ---
 
-### Screenshot 3: Multi-Instance Real-Time Detection
+### Screenshot 3: Real-Time Telemetry & Sustained Frame Rate
 
-![Multi-Instance Detection](./detection_screenshots/opencv_det_03_multi_instance_detection.jpg)
+![Real-Time Bench Detection](./detection_screenshots/opencv_det_03_multi_instance_detection.jpg)
 
 * **Screenshot Title:** `opencv_det_03_multi_instance_detection.jpg`
-* **What is Being Detected:** Two distinct physical enclosure components present concurrently within the same frame.
-* **What the Bounding Box Represents:** Two independent bounding boxes: one bounding the primary foreground enclosure and a second bounding an adjacent enclosure component, each with separate spatial limits.
-* **What the Confidence Score Represents:** Primary instance at **91.7% confidence** and secondary instance at **71.2% confidence**, both comfortably exceeding the $0.35$ detection threshold.
+* **What is Being Detected:** Enclosure target undergoing sustained bench inspection under real lab lighting conditions.
+* **What the Bounding Box Represents:** Stable rectangular bounding box bounding the enclosure faceplate and aperture geometry.
+* **What the Confidence Score Represents:** High-confidence detection at **78.1% confidence**, stably exceeding the detection threshold.
 * **What the Screenshot Proves About the OpenCV Pipeline:**
-  1. Proves Non-Maximum Suppression (NMS) allows legitimate multi-object detections without falsely suppressing adjacent valid instances.
-  2. The HUD dynamically tracks instance multiplicity, updating the status banner to `STATUS: DETECTED (2 Enclosures)`.
-  3. Frame rendering latency remains stable (`Latency: 274.9ms`, `FPS: 3.4`), proving that multi-box drawing adds negligible overhead (< 0.5 ms).
+  1. Real-time inference executes with low, stable latency (`Latency: 270.8ms`, `FPS: 3.5`).
+  2. The HUD dynamically updates status flags and telemetry counters without frame tearing or jitter.
+  3. Fast frame rendering with OpenCV bounding box overlays adds minimal overhead (< 0.5 ms).
 
 ---
 
@@ -118,10 +118,10 @@ All visual evidence presented below was captured live during actual operation of
 * **Screenshot Title:** `opencv_det_04_angled_enclosure_perspective.jpg`
 * **What is Being Detected:** The enclosure viewed at a steep oblique angle with visible ribbon cable interface.
 * **What the Bounding Box Represents:** The rectangular envelope bounding the tilted enclosure body, accurately accommodating perspective foreshortening.
-* **What the Confidence Score Represents:** A **75.0% confidence score** (`RASPBERY PI CAM ENCLOSURE: 75.0%`), validating geometric invariance to out-of-plane rotation.
+* **What the Confidence Score Represents:** A **72.1% confidence score** (`RASPBERRY PI CAM ENCLOSURE: 72.1%`), validating geometric invariance to out-of-plane rotation.
 * **What the Screenshot Proves About the OpenCV Pipeline:**
   1. Verifies that the OpenCV letterbox preprocessing preserves circular and diagonal features without non-linear geometric distortion.
-  2. Demonstrates consistent frame acquisition throughput (`Latency: 270.8ms`, `FPS: 3.5`).
+  2. Demonstrates consistent frame acquisition throughput (`Latency: 272.7ms`, `FPS: 3.5`).
 
 ---
 

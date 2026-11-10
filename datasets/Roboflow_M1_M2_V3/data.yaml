@@ -4,9 +4,9 @@ nc: 1
 roboflow:
   license: Private
   project: m1_m2
-  url: https://app.roboflow.com/satheesh-s-workspace/m1_m2/3
+  url: https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1
   version: 3
-  workspace: satheesh-s-workspace
+  workspace: satheesh-b-4hbyc
 test: ../test/images
 train: ../train/images
 val: ../valid/images

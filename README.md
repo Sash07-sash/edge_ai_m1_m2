@@ -3,7 +3,7 @@
 An end-to-end Edge AI object detection pipeline designed to detect a **Raspberry Pi Camera Enclosure** in real time on a **Raspberry Pi 5** and desktop platforms using a fine-tuned **YOLO26 Nano** model.
 
 [![YOLO26 Nano](https://img.shields.io/badge/Architecture-YOLO26%20Nano-blue.svg)](https://github.com/ultralytics/ultralytics)
-[![Roboflow Version 3](https://img.shields.io/badge/Roboflow-Version%203%20(Trained)-brightgreen.svg)](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
+[![Roboflow Version 3](https://img.shields.io/badge/Roboflow-Version%203%20(Trained)-brightgreen.svg)](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1)
 [![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%205%20%7C%20Linux%20%7C%20Windows-orange.svg)]()
 [![Validation mAP50](https://img.shields.io/badge/Validation%20mAP%4050-99.28%25-success.svg)]()
 [![Test mAP50](https://img.shields.io/badge/Test%20mAP%4050-99.31%25-success.svg)]()
@@ -28,8 +28,8 @@ The detected object is the **Raspberry Pi Camera Enclosure**, an original hardwa
 | :--- | :--- | :--- |
 | **Project Name** | Raspberry Pi Camera Enclosure Detection using Edge AI | Embedded Vision / Edge AI |
 | **Framework** | **YOLO26 Nano** (`yolo26n`) | Anchor-free decoupled head |
-| **Source Platform** | **Roboflow Cloud** | Project: [`satheesh-s-workspace/m1_m2`](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3) |
-| **Model Version** | **Version 3** | ID: `satheesh-s-workspace/m1_m2-3-yolo26n-t1` |
+| **Source Platform** | **Roboflow Cloud** | Project: [`satheesh-b-4hbyc/m1_m2-ckduy`](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1) |
+| **Model Version** | **Version 3** | ID: `satheesh-b-4hbyc/m1_m2-ckduy-3-yolo26n-t1` |
 | **Target Class** | `RASPBERY PI CAM ENCLOSURE` | Single-class detector (ID `0`) |
 | **Historical Baseline (M1)** | 124 images | Initial audit phase ([`dataset_audit_report.md`](evidence/M1/dataset_audit_report.md)) |
 | **Final Dataset (v3)** | **159 source images** (139 positive + 20 negative) | **274 augmented images** ([`datasets/Roboflow_M1_M2_V3/`](datasets/Roboflow_M1_M2_V3/)) |
@@ -280,7 +280,7 @@ All practical demonstration photographs, hardware images, camera captures, scree
 9. **M1 Central Evidence Index:** [`evidence/M1/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/README.md)
 
 ### Roboflow Dataset Version 3 Links
-- **Roboflow Cloud Project:** [`satheesh-s-workspace/m1_m2/3`](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
+- **Roboflow Cloud Project:** [`satheesh-b-4hbyc/m1_m2-ckduy/1`](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1)
 - **Local Dataset Directory:** [`datasets/Roboflow_M1_M2_V3/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/datasets/Roboflow_M1_M2_V3/)
 - **Dataset Version History:** [`evidence/M1/dataset_version_history.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/dataset_version_history.md)
 - **Dataset Version 3 Specification:** [`datasets/Roboflow_M1_M2_V3/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/datasets/Roboflow_M1_M2_V3/README.md)

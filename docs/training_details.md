@@ -1,8 +1,8 @@
 # Training Pipeline & Dataset Evolution Report
 
 **Project:** Raspberry Pi Camera Enclosure Detection using Edge AI  
-**Dataset Host:** Roboflow (`satheesh-s-workspace/m1_m2`)  
-**Trained Model:** Version 3 (`satheesh-s-workspace/m1_m2-3-yolo26n-t1`)  
+**Dataset Host:** Roboflow (`satheesh-b-4hbyc/m1_m2-ckduy`)  
+**Trained Model:** Version 3 (`satheesh-b-4hbyc/m1_m2-ckduy-3-yolo26n-t1`)  
 
 ---
 

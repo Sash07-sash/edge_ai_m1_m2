@@ -1,9 +1,9 @@
 # Roboflow Dataset Version 3: Raspberry Pi Camera Enclosure Detection
 
-**Roboflow Workspace:** `satheesh-s-workspace`
+**Roboflow Workspace:** `satheesh-b-4hbyc`
 **Roboflow Project:** `m1_m2`
 **Dataset Version:** `3`
-**Project URL:** [https://app.roboflow.com/satheesh-s-workspace/m1_m2/3](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
+**Project URL:** [https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1)
 **Export Format:** YOLOv8 (Ultralytics YOLO compatible for YOLO26 Nano)
 **Target Model:** YOLO26 Nano (`yolo26n`)
 **Download Date:** November 8, 2026

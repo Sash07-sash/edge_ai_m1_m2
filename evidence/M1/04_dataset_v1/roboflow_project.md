@@ -1,9 +1,9 @@
 # Roboflow Project Information & Version 3 Overview
 
 **Project Name:** `M1_M2`
-**Roboflow Workspace:** `satheesh-s-workspace`
+**Roboflow Workspace:** `satheesh-b-4hbyc`
 **Latest Dataset Version:** `Version 3` (Generated November 5, 2026)
-**Roboflow Direct URL:** [https://app.roboflow.com/satheesh-s-workspace/m1_m2/3](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
+**Roboflow Direct URL:** [https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1)
 **Local Dataset Path:** [`datasets/Roboflow_M1_M2_V3/`](../../../datasets/Roboflow_M1_M2_V3/)
 
 ---
@@ -22,7 +22,7 @@
 
 | Attribute | Specification | Notes |
 | :--- | :--- | :--- |
-| **Workspace** | `satheesh-s-workspace` | Roboflow Cloud |
+| **Workspace** | `satheesh-b-4hbyc` | Roboflow Cloud |
 | **Project** | `m1_m2` | Single-class object detection |
 | **Version ID** | `m1_m2-3` | Version 3 |
 | **Target Class** | `RASPBERY PI CAM ENCLOSURE` | Single target class (ID `0`) |

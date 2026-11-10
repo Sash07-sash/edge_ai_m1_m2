@@ -42,10 +42,10 @@ def upload_dataset(api_key, workspace_name, project_name):
 
 def update_repo_links(workspace_name, project_name, version="1"):
     old_urls = [
-        "https://app.roboflow.com/satheesh-s-workspace/m1_m2/3",
+        "https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1",
         "https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3",
-        "satheesh-s-workspace/m1_m2",
-        "satheesh-s-workspace"
+        "satheesh-b-4hbyc/m1_m2-ckduy",
+        "satheesh-b-4hbyc"
     ]
     new_url = f"https://app.roboflow.com/{workspace_name}/{project_name}/{version}"
     new_proj = f"{workspace_name}/{project_name}"
@@ -60,9 +60,9 @@ def update_repo_links(workspace_name, project_name, version="1"):
                     with open(p, 'r', encoding='utf-8') as fp:
                         content = fp.read()
                     updated = content
-                    updated = updated.replace("https://app.roboflow.com/satheesh-s-workspace/m1_m2/3", new_url)
-                    updated = updated.replace("satheesh-s-workspace/m1_m2", new_proj)
-                    updated = updated.replace("satheesh-s-workspace", workspace_name)
+                    updated = updated.replace("https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1", new_url)
+                    updated = updated.replace("satheesh-b-4hbyc/m1_m2-ckduy", new_proj)
+                    updated = updated.replace("satheesh-b-4hbyc", workspace_name)
                     if updated != content:
                         with open(p, 'w', encoding='utf-8') as fp:
                             fp.write(updated)
