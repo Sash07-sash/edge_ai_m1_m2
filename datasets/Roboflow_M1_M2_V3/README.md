@@ -1,9 +1,9 @@
 # Roboflow Dataset Version 3: Raspberry Pi Camera Enclosure Detection
 
-**Roboflow Workspace:** `jaishanth-s-workspace`
+**Roboflow Workspace:** `satheesh-s-workspace`
 **Roboflow Project:** `m1_m2`
 **Dataset Version:** `3`
-**Project URL:** [https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3](https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3)
+**Project URL:** [https://app.roboflow.com/satheesh-s-workspace/m1_m2/3](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
 **Export Format:** YOLOv8 (Ultralytics YOLO compatible for YOLO26 Nano)
 **Target Model:** YOLO26 Nano (`yolo26n`)
 **Download Date:** November 8, 2026
@@ -15,7 +15,7 @@
 
 This dataset contains the official **Version 3** training, validation, and testing images exported from the Roboflow cloud platform for the **Raspberry Pi Camera Enclosure Detection** Edge AI project.
 
-The target object is the custom 3D-printed Raspberry Pi camera enclosure designed by **Jaishanth** as an **Individual Design and Research Project (IDRP)**.
+The target object is the custom 3D-printed Raspberry Pi camera enclosure designed by **Satheesh** as an **Individual Design and Research Project (IDRP)**.
 
 ```
 datasets/Roboflow_M1_M2_V3/

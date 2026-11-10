@@ -2,8 +2,8 @@
 
 **Assessment Target:** M2 — Model Optimization & Evaluation
 **Assessment Cell (Google Sheet):** **Cell J**
-**Evidence Directory:** [`evidence/M2/04_fair_benchmark/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/)
-**Benchmark Suite Script:** [`benchmark/m2_performance_benchmark.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/benchmark/m2_performance_benchmark.py)
+**Evidence Directory:** [`evidence/M2/04_fair_benchmark/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/)
+**Benchmark Suite Script:** [`benchmark/m2_performance_benchmark.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/benchmark/m2_performance_benchmark.py)
 **Detailed Benchmark Report:** [`../reports/M2_Performance_Benchmark.md`](../reports/M2_Performance_Benchmark.md)
 
 ---

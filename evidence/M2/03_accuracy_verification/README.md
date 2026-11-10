@@ -2,8 +2,8 @@
 
 **Assessment Target:** M2 — Model Optimization & Evaluation  
 **Assessment Cell (Google Sheet):** **Cell H**  
-**Evidence Directory:** [`evidence/M2/03_accuracy_verification/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/)  
-**Evaluation Script:** [`benchmark/m2_accuracy_evaluation.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/benchmark/m2_accuracy_evaluation.py)  
+**Evidence Directory:** [`evidence/M2/03_accuracy_verification/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/)  
+**Evaluation Script:** [`benchmark/m2_accuracy_evaluation.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/benchmark/m2_accuracy_evaluation.py)  
 **Accuracy Report:** [`../reports/M2_Accuracy_Comparison.md`](../reports/M2_Accuracy_Comparison.md)  
 
 ---
@@ -12,7 +12,7 @@
 
 A core requirement of model optimization for edge deployment is verifying that execution speedup does not compromise predictive accuracy or geometric localization quality.
 
-To evaluate model fidelity under rigorous scientific controls, an exhaustive side-by-side accuracy evaluation was conducted between the baseline PyTorch model ([`models/best.pt`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/best.pt)) and the optimized ONNX model ([`models/onnx/best.onnx`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)) across the independent held-out test split of the Roboflow Version 3 dataset.
+To evaluate model fidelity under rigorous scientific controls, an exhaustive side-by-side accuracy evaluation was conducted between the baseline PyTorch model ([`models/best.pt`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/best.pt)) and the optimized ONNX model ([`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)) across the independent held-out test split of the Roboflow Version 3 dataset.
 
 ### Strict Test Split Classification Audit
 The held-out test set comprises 14 total images audited into two mutually exclusive experimental subsets:

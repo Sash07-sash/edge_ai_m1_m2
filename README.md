@@ -3,7 +3,7 @@
 An end-to-end Edge AI object detection pipeline designed to detect a **Raspberry Pi Camera Enclosure** in real time on a **Raspberry Pi 5** and desktop platforms using a fine-tuned **YOLO26 Nano** model.
 
 [![YOLO26 Nano](https://img.shields.io/badge/Architecture-YOLO26%20Nano-blue.svg)](https://github.com/ultralytics/ultralytics)
-[![Roboflow Version 3](https://img.shields.io/badge/Roboflow-Version%203%20(Trained)-brightgreen.svg)](https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3)
+[![Roboflow Version 3](https://img.shields.io/badge/Roboflow-Version%203%20(Trained)-brightgreen.svg)](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
 [![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%205%20%7C%20Linux%20%7C%20Windows-orange.svg)]()
 [![Validation mAP50](https://img.shields.io/badge/Validation%20mAP%4050-99.28%25-success.svg)]()
 [![Test mAP50](https://img.shields.io/badge/Test%20mAP%4050-99.31%25-success.svg)]()
@@ -18,7 +18,7 @@ This project implements robust, low-latency object detection for the custom Rasp
 - Variable indoor lighting (bright day vs. dim night)
 - **Zero-false-positive rejection** on plain walls, folded curtains, windows, and empty hands.
 
-The detected object is the **Raspberry Pi Camera Enclosure**, an original hardware component designed as an **Individual Design and Research Project (IDRP)** by **Jaishanth** in Autodesk Fusion 360 and fabricated via FDM 3D printing.
+The detected object is the **Raspberry Pi Camera Enclosure**, an original hardware component designed as an **Individual Design and Research Project (IDRP)** by **Satheesh** in Autodesk Fusion 360 and fabricated via FDM 3D printing.
 
 ---
 
@@ -28,8 +28,8 @@ The detected object is the **Raspberry Pi Camera Enclosure**, an original hardwa
 | :--- | :--- | :--- |
 | **Project Name** | Raspberry Pi Camera Enclosure Detection using Edge AI | Embedded Vision / Edge AI |
 | **Framework** | **YOLO26 Nano** (`yolo26n`) | Anchor-free decoupled head |
-| **Source Platform** | **Roboflow Cloud** | Project: [`jaishanth-s-workspace/m1_m2`](https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3) |
-| **Model Version** | **Version 3** | ID: `jaishanth-s-workspace/m1_m2-3-yolo26n-t1` |
+| **Source Platform** | **Roboflow Cloud** | Project: [`satheesh-s-workspace/m1_m2`](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3) |
+| **Model Version** | **Version 3** | ID: `satheesh-s-workspace/m1_m2-3-yolo26n-t1` |
 | **Target Class** | `RASPBERY PI CAM ENCLOSURE` | Single-class detector (ID `0`) |
 | **Historical Baseline (M1)** | 124 images | Initial audit phase ([`dataset_audit_report.md`](evidence/M1/dataset_audit_report.md)) |
 | **Final Dataset (v3)** | **159 source images** (139 positive + 20 negative) | **274 augmented images** ([`datasets/Roboflow_M1_M2_V3/`](datasets/Roboflow_M1_M2_V3/)) |
@@ -66,7 +66,7 @@ Test          12        14      100.00%     91.70%    99.31%     93.13%
 ```
 edge_ai_m1_m2/
 ├── README.md                              # Root project documentation & evidence index
-├── ENCLOSURE_JAISHANTH.f3d                # Master Autodesk Fusion 360 CAD Model (875 KB)
+├── ENCLOSURE_SATHEESH.f3d                # Master Autodesk Fusion 360 CAD Model (875 KB)
 ├── requirements.txt                       # Dependencies for RPi 5 and Desktop
 ├── .gitignore                             # Git ignore excluding cache & secrets
 ├── config/
@@ -128,7 +128,7 @@ edge_ai_m1_m2/
     │   │   └── visual_evidence/           # Confusion matrix, PR curve & live test frames
     │   └── 07_cad_design/                 # IDRP Hardware CAD Evidence & Design Views
     │       ├── README.md                  # CAD evidence navigation & summary
-    │       ├── ENCLOSURE_JAISHANTH.f3d    # Preserved original CAD file (875 KB)
+    │       ├── ENCLOSURE_SATHEESH.f3d    # Preserved original CAD file (875 KB)
     │       ├── cad_isometric_view.png     # Genuine 3D exploded isometric render
     │       ├── cad_front_view.png         # Autodesk Fusion 360 front elevation (lens aperture & standoffs)
     │       ├── cad_perspective_view.png   # Autodesk Fusion 360 perspective view (internal cavity & port)
@@ -161,14 +161,14 @@ edge_ai_m1_m2/
 
 ## 5. CAD Design Evidence: IDRP Hardware Component
 
-The custom Raspberry Pi Camera Enclosure was modeled by **Jaishanth** as an **Individual Design and Research Project (IDRP)** to provide rigid optical alignment, impact protection, and strain-relieved ribbon cable routing for edge computer vision.
+The custom Raspberry Pi Camera Enclosure was modeled by **Satheesh** as an **Individual Design and Research Project (IDRP)** to provide rigid optical alignment, impact protection, and strain-relieved ribbon cable routing for edge computer vision.
 
 ### 5.1 Primary CAD Model Previews
 
 | 3D Isometric Exploded View (Native CAD Render) | Autodesk Fusion 360 Front Elevation (Lens Port) |
 | :---: | :---: |
 | ![3D Isometric View](evidence/M1/07_cad_design/cad_isometric_view.png) | ![CAD Front Elevation](evidence/M1/07_cad_design/cad_front_view.png) |
-| *Figure 5.1: 3D exploded isometric assembly render extracted from `ENCLOSURE_JAISHANTH.f3d`, showing top shell, camera mounting bosses, and base.* | *Figure 5.2: Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture, optical axis alignment, and M2 standoff positions.* |
+| *Figure 5.1: 3D exploded isometric assembly render extracted from `ENCLOSURE_SATHEESH.f3d`, showing top shell, camera mounting bosses, and base.* | *Figure 5.2: Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture, optical axis alignment, and M2 standoff positions.* |
 
 | Autodesk Fusion 360 Perspective (Internal Chamber) | Autodesk Fusion 360 Side Profile (Cable Notch) |
 | :---: | :---: |
@@ -182,12 +182,12 @@ The physical prototype of the Raspberry Pi Camera Enclosure was manufactured usi
 | Fabricated Physical Enclosure Prototype (IDRP Hardware Component) |
 | :---: |
 | ![Physical Enclosure Prototype](evidence/M1/07_cad_design/physical_prototype/enclosure_physical_prototype.jpeg) |
-| *Figure 5.5: Genuine photograph of the fabricated 3D-printed Raspberry Pi camera enclosure prototype. Demonstrates physical realization of the top faceplate, Ø 16 mm circular lens opening, and structural housing conforming to `ENCLOSURE_JAISHANTH.f3d`.* |
+| *Figure 5.5: Genuine photograph of the fabricated 3D-printed Raspberry Pi camera enclosure prototype. Demonstrates physical realization of the top faceplate, Ø 16 mm circular lens opening, and structural housing conforming to `ENCLOSURE_SATHEESH.f3d`.* |
 
 ### 5.3 CAD Model Verification & Integrity
-- **Original CAD File:** [`evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d`](evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **Direct GitHub File Link:** [`ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
+- **Original CAD File:** [`evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d`](evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **Direct GitHub File Link:** [`ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
 - **Native Format:** Autodesk Fusion 360 Archive (`.f3d`, Autodesk Neutron / ASM B-rep)
 - **File Size:** **874,983 bytes** (854.48 KB / ~875 KB)
 - **SHA-256 Checksum:** `84444cee13753f74e86be3e41a7b0b865c8727c2576d06237835fc374914a4e1`
@@ -199,7 +199,7 @@ The physical prototype of the Raspberry Pi Camera Enclosure was manufactured usi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/jaishanthlenin-123/edge_ai_m1_m2.git
+   git clone https://github.com/Sash07-sash/edge_ai_m1_m2.git
    cd edge_ai_m1_m2
    ```
 
@@ -229,7 +229,7 @@ Full step-by-step instructions are available in [docs/raspberry_pi_setup.md](doc
 sudo apt update && sudo apt install -y python3-pip python3-venv libgl1 libglib2.0-0
 
 # 2. Clone repo and create virtual environment with system site packages
-git clone https://github.com/jaishanthlenin-123/edge_ai_m1_m2.git
+git clone https://github.com/Sash07-sash/edge_ai_m1_m2.git
 cd edge_ai_m1_m2
 python3 -m venv --system-site-packages venv
 source venv/bin/activate
@@ -269,41 +269,41 @@ All practical demonstration photographs, hardware images, camera captures, scree
 - **Google Drive Folder (M1/M2):** [Open M1/M2 Photos & Videos Evidence Folder](https://drive.google.com/drive/folders/1J-PwAAhBoObjruYKZ6qn_V1JmQRSrPKM?usp=sharing)
 
 ### Milestone 1 (M1) Assessment Links
-1. **Camera & Repository Setup:** [`evidence/M1/01_camera_and_repo/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/01_camera_and_repo/)
-2. **OpenCV Video Pipeline Report:** [`M1_OpenCV_Pipeline_Report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/02_opencv_pipeline/M1_OpenCV_Pipeline_Report.md)
-3. **Baseline Speed Benchmark:** [`M1_Baseline_Performance_Report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/M1_Baseline_Performance_Report.md)
-4. **Dataset Version 1 Audit & Roboflow v3:** [`dataset_audit_report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/dataset_audit_report.md)
-5. **Correct Split Verification Report:** [`M1_Dataset_Split_Report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/05_correct_split/M1_Dataset_Split_Report.md)
-6. **Train & Run Detector Report:** [`M1_Training_and_Detection_Report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/06_train_and_run_detector/M1_Training_and_Detection_Report.md)
-7. **CAD Design – Direct CAD File Link:** [`ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-8. **CAD Design – Evidence Folder Link:** [`evidence/M1/07_cad_design/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
-9. **M1 Central Evidence Index:** [`evidence/M1/README.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/README.md)
+1. **Camera & Repository Setup:** [`evidence/M1/01_camera_and_repo/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/01_camera_and_repo/)
+2. **OpenCV Video Pipeline Report:** [`M1_OpenCV_Pipeline_Report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/02_opencv_pipeline/M1_OpenCV_Pipeline_Report.md)
+3. **Baseline Speed Benchmark:** [`M1_Baseline_Performance_Report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/M1_Baseline_Performance_Report.md)
+4. **Dataset Version 1 Audit & Roboflow v3:** [`dataset_audit_report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/dataset_audit_report.md)
+5. **Correct Split Verification Report:** [`M1_Dataset_Split_Report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/05_correct_split/M1_Dataset_Split_Report.md)
+6. **Train & Run Detector Report:** [`M1_Training_and_Detection_Report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/06_train_and_run_detector/M1_Training_and_Detection_Report.md)
+7. **CAD Design – Direct CAD File Link:** [`ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+8. **CAD Design – Evidence Folder Link:** [`evidence/M1/07_cad_design/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
+9. **M1 Central Evidence Index:** [`evidence/M1/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/README.md)
 
 ### Roboflow Dataset Version 3 Links
-- **Roboflow Cloud Project:** [`jaishanth-s-workspace/m1_m2/3`](https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3)
-- **Local Dataset Directory:** [`datasets/Roboflow_M1_M2_V3/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/datasets/Roboflow_M1_M2_V3/)
-- **Dataset Version History:** [`evidence/M1/dataset_version_history.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/dataset_version_history.md)
-- **Dataset Version 3 Specification:** [`datasets/Roboflow_M1_M2_V3/README.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/datasets/Roboflow_M1_M2_V3/README.md)
-- **Visual Previews (Raw & Annotated):** [`evidence/M1/04_dataset_v1/roboflow_v3_previews/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/04_dataset_v1/roboflow_v3_previews/)
+- **Roboflow Cloud Project:** [`satheesh-s-workspace/m1_m2/3`](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
+- **Local Dataset Directory:** [`datasets/Roboflow_M1_M2_V3/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/datasets/Roboflow_M1_M2_V3/)
+- **Dataset Version History:** [`evidence/M1/dataset_version_history.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/dataset_version_history.md)
+- **Dataset Version 3 Specification:** [`datasets/Roboflow_M1_M2_V3/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/datasets/Roboflow_M1_M2_V3/README.md)
+- **Visual Previews (Raw & Annotated):** [`evidence/M1/04_dataset_v1/roboflow_v3_previews/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/04_dataset_v1/roboflow_v3_previews/)
 
 ### Milestone 2 (M2) Assessment Links
-- **M2 Central Evidence Index:** [`evidence/M2/README.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M2/README.md)
-- **M2 Assessment Links Reference Sheet (Google Sheet Cells D, F, H, J, L, N):** [`evidence/M2/M2_ASSESSMENT_LINKS.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M2/M2_ASSESSMENT_LINKS.md)
-1. **Export to ONNX (Cell D - 3 Marks):** [`evidence/M2/01_onnx_export/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/)
-2. **Convert and Run Live (Cell F - 4 Marks):** [`evidence/M2/02_live_onnx_deployment/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/)
-3. **Accuracy Check (Cell H - 4 Marks):** [`evidence/M2/03_accuracy_verification/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/)
-4. **Fair Benchmark (Cell J - 4 Marks):** [`evidence/M2/04_fair_benchmark/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/)
-5. **CPU vs Accelerator Stack (Cell L - 2 Marks):** [`evidence/M2/05_cpu_accelerator_comparison/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/05_cpu_accelerator_comparison/)
-6. **Own Target and Trade-Off (Cell N - 3 Marks):** [`evidence/M2/06_optimization_tradeoff/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/)
-- **M2 Final Optimization Report:** [`evidence/M2/reports/M2_Final_Optimization_Report.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M2/reports/M2_Final_Optimization_Report.md)
-- **M2 Accuracy Comparison Report:** [`evidence/M2/reports/M2_Accuracy_Comparison.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M2/reports/M2_Accuracy_Comparison.md)
-- **M2 Latency & Throughput CSV Measurements:** [`evidence/M2/csv/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/csv/)
-- **M2 15-Scenario Validation Tests:** [`evidence/M2/manual_camera_tests/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/manual_camera_tests/)
+- **M2 Central Evidence Index:** [`evidence/M2/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/README.md)
+- **M2 Assessment Links Reference Sheet (Google Sheet Cells D, F, H, J, L, N):** [`evidence/M2/M2_ASSESSMENT_LINKS.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/M2_ASSESSMENT_LINKS.md)
+1. **Export to ONNX (Cell D - 3 Marks):** [`evidence/M2/01_onnx_export/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/)
+2. **Convert and Run Live (Cell F - 4 Marks):** [`evidence/M2/02_live_onnx_deployment/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/)
+3. **Accuracy Check (Cell H - 4 Marks):** [`evidence/M2/03_accuracy_verification/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/)
+4. **Fair Benchmark (Cell J - 4 Marks):** [`evidence/M2/04_fair_benchmark/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/)
+5. **CPU vs Accelerator Stack (Cell L - 2 Marks):** [`evidence/M2/05_cpu_accelerator_comparison/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/05_cpu_accelerator_comparison/)
+6. **Own Target and Trade-Off (Cell N - 3 Marks):** [`evidence/M2/06_optimization_tradeoff/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/)
+- **M2 Final Optimization Report:** [`evidence/M2/reports/M2_Final_Optimization_Report.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/reports/M2_Final_Optimization_Report.md)
+- **M2 Accuracy Comparison Report:** [`evidence/M2/reports/M2_Accuracy_Comparison.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/reports/M2_Accuracy_Comparison.md)
+- **M2 Latency & Throughput CSV Measurements:** [`evidence/M2/csv/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/csv/)
+- **M2 15-Scenario Validation Tests:** [`evidence/M2/manual_camera_tests/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/manual_camera_tests/)
 
 ---
 
 ## 10. License & Acknowledgements
 
-- **Hardware Design (IDRP):** Jaishanth (Autodesk Fusion 360)
+- **Hardware Design (IDRP):** Satheesh (Autodesk Fusion 360)
 - **Model Framework:** [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
 - **Dataset Hosting & Cloud Training:** [Roboflow](https://roboflow.com)

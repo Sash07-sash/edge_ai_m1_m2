@@ -24,7 +24,7 @@ This directory contains the trained weights for the **YOLO26 Nano** object detec
 - **Number of Classes:** 1
 - **Class Label:** `RASPBERY PI CAM ENCLOSURE` (Class ID `0`)
 - **Training Epochs:** 311 epochs (Roboflow Cloud fine-tune)
-- **Source Dataset:** Roboflow `jaishanth-s-workspace/m1_m2/3` (159 source images: 139 positive + 20 negative background images, 274 augmented)
+- **Source Dataset:** Roboflow `satheesh-s-workspace/m1_m2/3` (159 source images: 139 positive + 20 negative background images, 274 augmented)
 
 ---
 

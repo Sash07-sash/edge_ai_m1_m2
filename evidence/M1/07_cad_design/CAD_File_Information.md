@@ -1,10 +1,10 @@
-# CAD File Information: ENCLOSURE_JAISHANTH.f3d
+# CAD File Information: ENCLOSURE_SATHEESH.f3d
 
 **Component:** Raspberry Pi Camera Enclosure (IDRP Hardware Component)
-**Designer:** Jaishanth
+**Designer:** Satheesh
 **Location in Repository:**
-- Primary Evidence Path: [`evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d`](./ENCLOSURE_JAISHANTH.f3d)
-- Root Path: [`ENCLOSURE_JAISHANTH.f3d`](../../../ENCLOSURE_JAISHANTH.f3d)
+- Primary Evidence Path: [`evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d`](./ENCLOSURE_SATHEESH.f3d)
+- Root Path: [`ENCLOSURE_SATHEESH.f3d`](../../../ENCLOSURE_SATHEESH.f3d)
 
 ---
 
@@ -12,7 +12,7 @@
 
 | Property | Value |
 | :--- | :--- |
-| **Filename** | `ENCLOSURE_JAISHANTH.f3d` |
+| **Filename** | `ENCLOSURE_SATHEESH.f3d` |
 | **File Extension** | `.f3d` |
 | **CAD System** | Autodesk Fusion 360 |
 | **Format Specification** | Autodesk Fusion Document Archive (`hybrid-design` standard) |
@@ -44,10 +44,10 @@ MD5         5f00dc2a2e8801f53b70868a8e7b5c1a
 
 ## 3. Internal Architecture & Data Streams
 
-Inspection of `ENCLOSURE_JAISHANTH.f3d` reveals 68 internal entries organized into functional subsystems:
+Inspection of `ENCLOSURE_SATHEESH.f3d` reveals 68 internal entries organized into functional subsystems:
 
 ```
-ENCLOSURE_JAISHANTH.f3d (ZIP Package)
+ENCLOSURE_SATHEESH.f3d (ZIP Package)
 ├── Manifest.dat                                       # Document root manifest
 ├── Properties.dat                                     # Document type definition
 └── FusionAssetName[Active]/
@@ -81,13 +81,13 @@ ENCLOSURE_JAISHANTH.f3d (ZIP Package)
 ### Option 1: Autodesk Fusion 360 (Native Application)
 1. Launch **Autodesk Fusion 360** (desktop client).
 2. Click **File** $\rightarrow$ **Open...**
-3. Select **Open from my computer** and browse to `ENCLOSURE_JAISHANTH.f3d`.
-4. Alternatively, click **Upload** in the Data Panel and drag-and-drop `ENCLOSURE_JAISHANTH.f3d`.
+3. Select **Open from my computer** and browse to `ENCLOSURE_SATHEESH.f3d`.
+4. Alternatively, click **Upload** in the Data Panel and drag-and-drop `ENCLOSURE_SATHEESH.f3d`.
 
 ### Option 2: Autodesk Viewer (Free Browser-Based, No Software Required)
 1. Open a web browser and navigate to [https://viewer.autodesk.com/](https://viewer.autodesk.com/).
 2. Sign in with a free Autodesk account.
-3. Drag and drop `ENCLOSURE_JAISHANTH.f3d` into the upload zone.
+3. Drag and drop `ENCLOSURE_SATHEESH.f3d` into the upload zone.
 4. Rotate, pan, zoom, measure dimensions, and explode the model directly in the browser.
 
 ### Option 3: Exporting to STEP / STL for 3D Printing

@@ -2,15 +2,15 @@
 
 **Assessment Target:** M2 — Model Optimization & Evaluation
 **Assessment Cell (Google Sheet):** **Cell D**
-**Evidence Directory:** [`evidence/M2/01_onnx_export/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/)
-**Primary Model Artifact:** [`models/onnx/best.onnx`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)
-**Export Script:** [`benchmark/export_onnx.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/benchmark/export_onnx.py)
+**Evidence Directory:** [`evidence/M2/01_onnx_export/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/)
+**Primary Model Artifact:** [`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)
+**Export Script:** [`benchmark/export_onnx.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/benchmark/export_onnx.py)
 
 ---
 
 ## 1. Overview & Objectives
 
-In Milestone 2, the trained PyTorch YOLO26 Nano model checkpoint ([`models/best.pt`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/best.pt)) was exported to the open-standard **ONNX (Open Neural Network Exchange)** format ([`models/onnx/best.onnx`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)).
+In Milestone 2, the trained PyTorch YOLO26 Nano model checkpoint ([`models/best.pt`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/best.pt)) was exported to the open-standard **ONNX (Open Neural Network Exchange)** format ([`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)).
 
 The objective of this stage was to:
 1. Decouple inference execution from the dynamic PyTorch runtime and heavy Python dependencies.
@@ -64,7 +64,7 @@ The exported computational graph strictly adheres to the $640 \times 640$ letter
 
 ## 4. Export Implementation & Execution
 
-The export was performed using the dedicated script [`benchmark/export_onnx.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/benchmark/export_onnx.py):
+The export was performed using the dedicated script [`benchmark/export_onnx.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/benchmark/export_onnx.py):
 
 ```bash
 # Export execution on Raspberry Pi 5
@@ -118,7 +118,7 @@ An identical synthetic input tensor $X \sim \mathcal{N}(0, 1) \in \mathbb{R}^{1 
 
 ## 6. Evidence Artifacts & Logs
 
-- **Primary ONNX Model:** [`models/onnx/best.onnx`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)
+- **Primary ONNX Model:** [`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx)
 - **Raw Export Console Log:** [`onnx_export_log.txt`](onnx_export_log.txt)
 - **Structured Export Metadata (JSON):** [`onnx_export_log.json`](onnx_export_log.json)
 - **Comprehensive Technical Report:** [`../reports/M2_ONNX_Export_Report.md`](../reports/M2_ONNX_Export_Report.md)

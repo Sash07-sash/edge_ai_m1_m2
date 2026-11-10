@@ -57,4 +57,4 @@ The image below captures a representative unaugmented frame from the active vide
 - **Camera Driver Module:** [`src/camera.py`](../../../src/camera.py) – Dual `Picamera2` and `cv2.VideoCapture` class implementation with automatic hardware fallback.
 - **Diagnostics Script:** [`test_connection.py`](../../../test_connection.py) – Standalone device enumeration and sensor verification script.
 - **Automated Diagnostic Launcher:** [`open_camera.bat`](../../../open_camera.bat) – Windows diagnostic batch utility.
-- **Remote Git Repository:** [`jaishanthlenin-123/edge_ai_m1_m2`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2) (`main` branch).
+- **Remote Git Repository:** [`Sash07-sash/edge_ai_m1_m2`](https://github.com/Sash07-sash/edge_ai_m1_m2) (`main` branch).

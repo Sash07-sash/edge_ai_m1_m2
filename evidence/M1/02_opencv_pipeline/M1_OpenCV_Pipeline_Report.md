@@ -2,7 +2,7 @@
 
 **Assessment Item:** 02_opencv_pipeline
 **Mark Weighting:** 4 Marks
-**Author:** Jaishanth
+**Author:** Satheesh
 **Date:** November 2026
 **Status:** Complete & Programmatically Verified
 

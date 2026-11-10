@@ -24,20 +24,20 @@ All Milestone 1 assessment requirements are systematically indexed below with di
 | **04** | **Dataset Version 1 Audit & v3** | **4** | [`dataset_audit_report.md`](./dataset_audit_report.md) | [`04_dataset_v1/original_m1_audit_visuals/`](./04_dataset_v1/original_m1_audit_visuals/) & [`roboflow_v3_previews/`](./04_dataset_v1/roboflow_v3_previews/) | 124-image audit, skin contamination proof, error catalog, evolution to Version 3 (24 raw & annotated previews) |
 | **05** | **Correct Split Verification**| **2** | [`M1_Dataset_Split_Report.md`](./05_correct_split/M1_Dataset_Split_Report.md) | [`05_correct_split/split_visuals/`](./05_correct_split/split_visuals/) | Split distribution (Train: 230, Valid: 30, Test: 14), 0 hash collisions, 9 split samples (train/valid/test pairs) |
 | **06** | **Train & Run Detector** | **5** | [`M1_Training_and_Detection_Report.md`](./06_train_and_run_detector/M1_Training_and_Detection_Report.md) | [`06_train_and_run_detector/visual_evidence/`](./06_train_and_run_detector/visual_evidence/) | Converged training curves, held-out test confusion matrix (100% precision, 91.7% recall), live detections, failure cases |
-| **07** | **CAD Design Evidence (IDRP)**| **Extra** | [`M1_CAD_Design_Report.md`](./07_cad_design/M1_CAD_Design_Report.md) | [`07_cad_design/`](./07_cad_design/) | Master CAD archive (`ENCLOSURE_JAISHANTH.f3d`), physical 3D-printed prototype, authentic Fusion 360 views & specs |
+| **07** | **CAD Design Evidence (IDRP)**| **Extra** | [`M1_CAD_Design_Report.md`](./07_cad_design/M1_CAD_Design_Report.md) | [`07_cad_design/`](./07_cad_design/) | Master CAD archive (`ENCLOSURE_SATHEESH.f3d`), physical 3D-printed prototype, authentic Fusion 360 views & specs |
 
 ---
 
 ## 2. Dedicated CAD Design Evidence (IDRP Hardware Component)
 
-The Raspberry Pi Camera Enclosure is the primary hardware component developed as an **Individual Design and Research Project (IDRP)** by **Jaishanth**. This physical enclosure houses the camera module and represents the target ground-truth object class detected by the Edge AI vision model.
+The Raspberry Pi Camera Enclosure is the primary hardware component developed as an **Individual Design and Research Project (IDRP)** by **Satheesh**. This physical enclosure houses the camera module and represents the target ground-truth object class detected by the Edge AI vision model.
 
 ### 2.1 CAD Design Evidence Previews
 
 | 3D Isometric Exploded View (Native CAD Render) | Autodesk Fusion 360 Front Elevation (Lens Port) |
 | :---: | :---: |
 | ![3D Isometric View](./07_cad_design/cad_isometric_view.png) | ![CAD Front View](./07_cad_design/cad_front_view.png) |
-| *Native 3D exploded assembly render extracted from `ENCLOSURE_JAISHANTH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
+| *Native 3D exploded assembly render extracted from `ENCLOSURE_SATHEESH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
 
 | Autodesk Fusion 360 Perspective (Internal Chamber) | Autodesk Fusion 360 Side Profile (Cable Notch) |
 | :---: | :---: |
@@ -52,9 +52,9 @@ The Raspberry Pi Camera Enclosure is the primary hardware component developed as
 | *Figure 2.5: High-resolution physical prototype photograph of the 3D-printed camera enclosure, confirming physical realization of the Autodesk Fusion 360 geometry.* |
 
 ### 2.3 CAD Model Verification & Integrity
-- **Original CAD File:** [`ENCLOSURE_JAISHANTH.f3d`](./07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **Direct GitHub Link (CAD File):** [Download / Inspect `ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
+- **Original CAD File:** [`ENCLOSURE_SATHEESH.f3d`](./07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **Direct GitHub Link (CAD File):** [Download / Inspect `ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
 - **CAD Format:** Autodesk Fusion 360 Document Archive (`.f3d`)
 - **Geometry Kernel:** Autodesk Neutron / Autodesk Shape Manager (ASM 232.5.0.65535 NT)
 - **File Size:** **874,983 bytes** (854.48 KB / ~875 KB)
@@ -74,7 +74,7 @@ The Raspberry Pi Camera Enclosure is the primary hardware component developed as
 
 The repository incorporates the official **Roboflow Dataset Version 3** downloaded directly from the Roboflow platform:
 
-- **Roboflow Project URL:** [https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3](https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3)
+- **Roboflow Project URL:** [https://app.roboflow.com/satheesh-s-workspace/m1_m2/3](https://app.roboflow.com/satheesh-s-workspace/m1_m2/3)
 - **Downloaded Dataset Location:** [`datasets/Roboflow_M1_M2_V3/`](../../datasets/Roboflow_M1_M2_V3/)
 - **Dataset Version 3 Specification:** [`datasets/Roboflow_M1_M2_V3/README.md`](../../datasets/Roboflow_M1_M2_V3/README.md)
 - **Dataset Version History Document:** [`dataset_version_history.md`](./dataset_version_history.md)

@@ -2,8 +2,8 @@
 
 **Project:** Edge AI Raspberry Pi Camera Enclosure Detection
 **Hardware Component:** Individual Design and Research Project (IDRP) Camera Enclosure
-**Author / Designer:** Jaishanth
-**CAD Model File:** [`ENCLOSURE_JAISHANTH.f3d`](./ENCLOSURE_JAISHANTH.f3d)
+**Author / Designer:** Satheesh
+**CAD Model File:** [`ENCLOSURE_SATHEESH.f3d`](./ENCLOSURE_SATHEESH.f3d)
 **File Format:** Autodesk Fusion 360 Archive (`.f3d`)
 **Status:** Verified, Accessible & Preserved
 
@@ -18,7 +18,7 @@ The physical 3D-printed enclosure serves as the target ground-truth object class
 ```
                     +------------------------------------+
                     |   Autodesk Fusion 360 CAD Model    |
-                    |      (ENCLOSURE_JAISHANTH.f3d)     |
+                    |      (ENCLOSURE_SATHEESH.f3d)     |
                     +-----------------+------------------+
                                       |
                                       v FDM 3D Printing (PLA / PETG)
@@ -46,9 +46,9 @@ The CAD file was located in the project directory, verified for structural integ
 
 | Metric | Verification Result |
 | :--- | :--- |
-| **Filename** | `ENCLOSURE_JAISHANTH.f3d` |
-| **Evidence Path** | `evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d` |
-| **Root Path** | `ENCLOSURE_JAISHANTH.f3d` |
+| **Filename** | `ENCLOSURE_SATHEESH.f3d` |
+| **Evidence Path** | `evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d` |
+| **Root Path** | `ENCLOSURE_SATHEESH.f3d` |
 | **Extension** | `.f3d` |
 | **Format** | Autodesk Fusion 360 Document Archive (ZIP container with Zstandard compression) |
 | **Geometry Engine** | Autodesk Neutron / Autodesk Shape Manager (ASM 232.5.0.65535 NT) |
@@ -78,7 +78,7 @@ The CAD model features a two-piece split-body assembly designed for modular manu
 | 3D Isometric Exploded View (Native CAD Render) | Autodesk Fusion 360 Front Elevation (Lens Port) |
 | :---: | :---: |
 | ![3D Isometric View](./cad_isometric_view.png) | ![CAD Front View](./cad_front_view.png) |
-| *Native 3D exploded assembly render extracted from `ENCLOSURE_JAISHANTH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
+| *Native 3D exploded assembly render extracted from `ENCLOSURE_SATHEESH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
 
 | Autodesk Fusion 360 Perspective (Internal Chamber) | Autodesk Fusion 360 Side Profile (Cable Notch) |
 | :---: | :---: |
@@ -151,7 +151,7 @@ The following views are generated directly from the original CAD file geometry:
 
 ### 7.1 3D Isometric View (Fusion 360 Native Render)
 ![3D Isometric View](./cad_isometric_view.png)
-*Figure 1: Authentic 1024×1024 3D exploded isometric render extracted from `ENCLOSURE_JAISHANTH.f3d`, showing top lid with lens aperture, bottom housing, internal camera module, mounting bosses, and ribbon cable slot.*
+*Figure 1: Authentic 1024×1024 3D exploded isometric render extracted from `ENCLOSURE_SATHEESH.f3d`, showing top lid with lens aperture, bottom housing, internal camera module, mounting bosses, and ribbon cable slot.*
 
 ---
 
@@ -182,8 +182,8 @@ The physical prototype of the Raspberry Pi Camera Enclosure was fabricated using
 
 ## 9. Direct Repository Links
 
-- **Original CAD File:** [`ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **Root CAD File Link:** [`ENCLOSURE_JAISHANTH.f3d (Root)`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/ENCLOSURE_JAISHANTH.f3d)
-- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
-- **M1 Central Evidence Index:** [`evidence/M1/README.md`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/README.md)
+- **Original CAD File:** [`ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **Root CAD File Link:** [`ENCLOSURE_SATHEESH.f3d (Root)`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/ENCLOSURE_SATHEESH.f3d)
+- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
+- **M1 Central Evidence Index:** [`evidence/M1/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/README.md)
 

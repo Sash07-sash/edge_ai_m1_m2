@@ -2,7 +2,7 @@
 
 **Assessment Item:** 06_train_and_run_detector
 **Mark Weighting:** 5 Marks
-**Author:** Jaishanth
+**Author:** Satheesh
 **Date:** November 2026
 **Status:** Complete & Comprehensively Documented
 

@@ -1,5 +1,5 @@
 # Roboflow Dataset & Model Configuration - Version 3
-# Project: jaishanth-s-workspace/m1_m2/3
+# Project: satheesh-s-workspace/m1_m2/3
 
 names:
   0: RASPBERY PI CAM ENCLOSURE
@@ -8,12 +8,12 @@ nc: 1
 imgsz: 640
 
 roboflow:
-  workspace: jaishanth-s-workspace
+  workspace: satheesh-s-workspace
   project: m1_m2
   version: 3
   model_type: yolo26n
   license: Private
-  url: https://app.roboflow.com/jaishanth-s-workspace/m1_m2/3
+  url: https://app.roboflow.com/satheesh-s-workspace/m1_m2/3
 
 metrics:
   validation:

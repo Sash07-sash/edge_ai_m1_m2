@@ -1,7 +1,7 @@
 # Milestone 2 (M2) — Model Optimization & Evaluation Master Evidence Index
 
 **Project:** Raspberry Pi Camera Enclosure Detection using Edge AI
-**Repository:** [`jaishanthlenin-123/edge_ai_m1_m2`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2)
+**Repository:** [`Sash07-sash/edge_ai_m1_m2`](https://github.com/Sash07-sash/edge_ai_m1_m2)
 **Branch:** `main`
 **Target Hardware:** Raspberry Pi 5 Model B Rev 1.1 (Quad ARM Cortex-A76 @ 2.4 GHz, 4GB RAM)
 **Total Assessment Marks:** **20 / 20 Marks**

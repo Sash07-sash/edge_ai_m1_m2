@@ -2,9 +2,9 @@
 
 **Assessment Target:** M2 — Model Optimization & Evaluation
 **Assessment Cell (Google Sheet):** **Cell F**
-**Evidence Directory:** [`evidence/M2/02_live_onnx_deployment/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/)
-**Live Deployment Script:** [`src/detect_onnx.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/src/detect_onnx.py)
-**Manual Camera Test Suite:** [`src/manual_camera_test.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/src/manual_camera_test.py)
+**Evidence Directory:** [`evidence/M2/02_live_onnx_deployment/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/)
+**Live Deployment Script:** [`src/detect_onnx.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/src/detect_onnx.py)
+**Manual Camera Test Suite:** [`src/manual_camera_test.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/src/manual_camera_test.py)
 
 ---
 
@@ -30,7 +30,7 @@ This section documents the live deployment and real-time execution of the optimi
 
 ## 2. Live Deployment Visual Evidence
 
-The following genuine frame captures demonstrate live object detection of the **Raspberry Pi Camera Enclosure** using [`models/onnx/best.onnx`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/models/onnx/best.onnx) on Raspberry Pi 5.
+The following genuine frame captures demonstrate live object detection of the **Raspberry Pi Camera Enclosure** using [`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx) on Raspberry Pi 5.
 
 > [!IMPORTANT]
 > **Visual Evidence Verification Standard:**
@@ -121,7 +121,7 @@ Real-time continuous video recordings documenting live camera scanning, backgrou
 
 ## 3. Deployment Script Walkthrough: `src/detect_onnx.py`
 
-The production deployment script [`src/detect_onnx.py`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/src/detect_onnx.py) implements pure ONNX Runtime execution with zero PyTorch dependencies:
+The production deployment script [`src/detect_onnx.py`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/src/detect_onnx.py) implements pure ONNX Runtime execution with zero PyTorch dependencies:
 
 ### Key Pipeline Stages:
 1. **Engine Initialization:**

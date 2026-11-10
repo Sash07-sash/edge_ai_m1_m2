@@ -2,9 +2,9 @@
 
 **Assessment Item:** 07_cad_design
 **Hardware Component:** Individual Design and Research Project (IDRP)
-**Designer:** Jaishanth
-**Native Model File:** [`ENCLOSURE_JAISHANTH.f3d`](./ENCLOSURE_JAISHANTH.f3d)
-**Direct GitHub CAD File Link:** [`ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
+**Designer:** Satheesh
+**Native Model File:** [`ENCLOSURE_SATHEESH.f3d`](./ENCLOSURE_SATHEESH.f3d)
+**Direct GitHub CAD File Link:** [`ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
 **Status:** Verified, Accessible & Preserved
 
 ---
@@ -18,7 +18,7 @@ This directory contains the computer-aided design (CAD) models, engineering draw
 | 3D Isometric Exploded View (Native CAD Render) | Autodesk Fusion 360 Front Elevation (Lens Port) |
 | :---: | :---: |
 | ![3D Isometric View](./cad_isometric_view.png) | ![CAD Front View](./cad_front_view.png) |
-| *Native 3D exploded assembly render extracted from `ENCLOSURE_JAISHANTH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
+| *Native 3D exploded assembly render extracted from `ENCLOSURE_SATHEESH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
 
 | Autodesk Fusion 360 Perspective (Internal Chamber) | Autodesk Fusion 360 Side Profile (Cable Notch) |
 | :---: | :---: |
@@ -34,13 +34,13 @@ The physical prototype of the Raspberry Pi Camera Enclosure was fabricated using
 | Fabricated Physical Enclosure Prototype (IDRP Hardware Component) |
 | :---: |
 | ![Physical Enclosure Prototype](./physical_prototype/enclosure_physical_prototype.jpeg) |
-| *Figure 1.5: Genuine photograph of the physical 3D-printed Raspberry Pi camera enclosure (IDRP hardware component). Demonstrates the physical top shell, Ø 16 mm circular lens opening, and structural housing matching the Fusion 360 geometry in `ENCLOSURE_JAISHANTH.f3d`.* |
+| *Figure 1.5: Genuine photograph of the physical 3D-printed Raspberry Pi camera enclosure (IDRP hardware component). Demonstrates the physical top shell, Ø 16 mm circular lens opening, and structural housing matching the Fusion 360 geometry in `ENCLOSURE_SATHEESH.f3d`.* |
 
 ---
 
 ## 2. CAD File Verification & Integrity
 
-- **Filename:** `ENCLOSURE_JAISHANTH.f3d`
+- **Filename:** `ENCLOSURE_SATHEESH.f3d`
 - **File Format:** Autodesk Fusion 360 Document Archive (`.f3d`)
 - **Kernel:** Autodesk Neutron / Autodesk Shape Manager (ASM 232.5.0.65535 NT)
 - **File Size:** **874,983 bytes** (854.48 KB / ~875 KB)

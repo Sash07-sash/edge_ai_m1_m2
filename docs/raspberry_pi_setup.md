@@ -52,7 +52,7 @@ Clone the repository to your Raspberry Pi:
 
 ```bash
 cd ~
-git clone https://github.com/jaishanthlenin-123/edge_ai_camera_enclosure.git
+git clone https://github.com/Sash07-sash/edge_ai_m1_m2.git
 cd edge_ai_camera_enclosure
 ```
 

@@ -3,8 +3,8 @@
 **Project:** Edge AI Object Detection System
 **Hardware ID:** IDRP-HW-CAM-ENC-01
 **Part Name:** Raspberry Pi Camera Protective Enclosure
-**Design Authority:** Jaishanth
-**CAD Model File:** [`ENCLOSURE_JAISHANTH.f3d`](./ENCLOSURE_JAISHANTH.f3d)
+**Design Authority:** Satheesh
+**CAD Model File:** [`ENCLOSURE_SATHEESH.f3d`](./ENCLOSURE_SATHEESH.f3d)
 **Native Format:** Autodesk Fusion 360 Document Archive (`.f3d`)
 **Target Camera:** Raspberry Pi Camera Module v2 / v3 (standard form factor)
 
@@ -21,7 +21,7 @@ This specification defines the mechanical geometry, mounting interfaces, manufac
 | 3D Isometric Exploded View (Native CAD Render) | Autodesk Fusion 360 Front Elevation (Lens Port) |
 | :---: | :---: |
 | ![3D Isometric View](./cad_isometric_view.png) | ![CAD Front View](./cad_front_view.png) |
-| *Native 3D exploded assembly render extracted from `ENCLOSURE_JAISHANTH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
+| *Native 3D exploded assembly render extracted from `ENCLOSURE_SATHEESH.f3d`* | *Autodesk Fusion 360 front elevation view showing Ø 16 mm circular lens aperture* |
 
 | Autodesk Fusion 360 Perspective (Internal Chamber) | Autodesk Fusion 360 Side Profile (Cable Notch) |
 | :---: | :---: |
@@ -52,7 +52,7 @@ View 4: Side Profile   Z-Y Projection          FFC ribbon exit slot, joint seam 
 
 ## 3. Dimensional Specifications (Extracted from Original CAD)
 
-All values are derived directly from the analytical geometry of [`ENCLOSURE_JAISHANTH.f3d`](./ENCLOSURE_JAISHANTH.f3d):
+All values are derived directly from the analytical geometry of [`ENCLOSURE_SATHEESH.f3d`](./ENCLOSURE_SATHEESH.f3d):
 
 | Feature | Value | Tolerance | Description |
 | :--- | :--- | :--- | :--- |
@@ -121,8 +121,8 @@ All values are derived directly from the analytical geometry of [`ENCLOSURE_JAIS
 
 ## 7. Traceability & Links
 
-- **Original CAD File:** [`ENCLOSURE_JAISHANTH.f3d`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_JAISHANTH.f3d)
-- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
+- **Original CAD File:** [`ENCLOSURE_SATHEESH.f3d`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M1/07_cad_design/ENCLOSURE_SATHEESH.f3d)
+- **CAD Evidence Folder:** [`evidence/M1/07_cad_design/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M1/07_cad_design/)
 - **Comprehensive CAD Design Report:** [`M1_CAD_Design_Report.md`](./M1_CAD_Design_Report.md)
 - **CAD File Information & Forensics:** [`CAD_File_Information.md`](./CAD_File_Information.md)
 

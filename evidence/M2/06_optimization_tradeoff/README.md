@@ -2,7 +2,7 @@
 
 **Assessment Target:** M2 — Model Optimization & Evaluation
 **Assessment Cell (Google Sheet):** **Cell N**
-**Evidence Directory:** [`evidence/M2/06_optimization_tradeoff/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/)
+**Evidence Directory:** [`evidence/M2/06_optimization_tradeoff/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/)
 **Comprehensive Trade-Off Report:** [`../reports/M2_Final_Optimization_Report.md`](../reports/M2_Final_Optimization_Report.md)
 
 ---
@@ -102,10 +102,10 @@ The certified deployment architecture for the **Raspberry Pi Camera Enclosure De
 
 | Assessment Criterion | Mark Weight | Primary Evidence Directory | Verification Status |
 | :--- | :---: | :--- | :---: |
-| **1. Export to ONNX** | 3 Marks | [`evidence/M2/01_onnx_export/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/) | **VERIFIED** |
-| **2. Convert and Run Live** | 4 Marks | [`evidence/M2/02_live_onnx_deployment/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/) | **VERIFIED** |
-| **3. Accuracy Check** | 4 Marks | [`evidence/M2/03_accuracy_verification/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/) | **VERIFIED** |
-| **4. Fair Benchmark** | 4 Marks | [`evidence/M2/04_fair_benchmark/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/) | **VERIFIED** |
-| **5. CPU vs. Accelerator Stack** | 2 Marks | [`evidence/M2/05_cpu_accelerator_comparison/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/05_cpu_accelerator_comparison/) | **VERIFIED** |
-| **6. Own Target & Trade-Off** | 3 Marks | [`evidence/M2/06_optimization_tradeoff/`](https://github.com/jaishanthlenin-123/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/) | **VERIFIED** |
+| **1. Export to ONNX** | 3 Marks | [`evidence/M2/01_onnx_export/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/01_onnx_export/) | **VERIFIED** |
+| **2. Convert and Run Live** | 4 Marks | [`evidence/M2/02_live_onnx_deployment/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/02_live_onnx_deployment/) | **VERIFIED** |
+| **3. Accuracy Check** | 4 Marks | [`evidence/M2/03_accuracy_verification/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/03_accuracy_verification/) | **VERIFIED** |
+| **4. Fair Benchmark** | 4 Marks | [`evidence/M2/04_fair_benchmark/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/04_fair_benchmark/) | **VERIFIED** |
+| **5. CPU vs. Accelerator Stack** | 2 Marks | [`evidence/M2/05_cpu_accelerator_comparison/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/05_cpu_accelerator_comparison/) | **VERIFIED** |
+| **6. Own Target & Trade-Off** | 3 Marks | [`evidence/M2/06_optimization_tradeoff/`](https://github.com/Sash07-sash/edge_ai_m1_m2/tree/main/evidence/M2/06_optimization_tradeoff/) | **VERIFIED** |
 | **Total Milestone 2 Score** | **20 Marks** | **All 6 Assessment Criteria Completed & Verified** | **100% Complete** |
