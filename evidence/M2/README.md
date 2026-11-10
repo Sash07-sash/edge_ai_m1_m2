@@ -12,7 +12,7 @@
 
 All practical demonstration photographs, hardware images, camera captures, screenshots and video recordings for Milestones 1 and 2 are organized in the following Google Drive folder.
 
-[Open M1/M2 Photos & Videos Evidence Folder](https://drive.google.com/drive/folders/1J-PwAAhBoObjruYKZ6qn_V1JmQRSrPKM?usp=sharing)
+[Open M1/M2 Photos & Videos Evidence Folder](https://drive.google.com/drive/folders/1zVr-5yNx_J1on14PDvErr2mZo2oayD3b?usp=sharing)
 
 ---
 

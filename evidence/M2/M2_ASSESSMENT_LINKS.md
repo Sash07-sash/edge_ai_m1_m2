@@ -59,4 +59,4 @@ If the assessor requests direct links to specific markdown report files or weigh
 
 ## 3. Master Index Link
 - **Milestone 2 Master Evidence Index:** [`https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/README.md`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/evidence/M2/README.md)
-- **Photos & Videos Evidence Folder (Google Drive):** [Open M1/M2 Photos & Videos Evidence Folder](https://drive.google.com/drive/folders/1J-PwAAhBoObjruYKZ6qn_V1JmQRSrPKM?usp=sharing)
+- **Photos & Videos Evidence Folder (Google Drive):** [Open M1/M2 Photos & Videos Evidence Folder](https://drive.google.com/drive/folders/1zVr-5yNx_J1on14PDvErr2mZo2oayD3b?usp=sharing)
