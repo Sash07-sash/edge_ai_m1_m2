@@ -8,38 +8,38 @@
 
 ## 1. Overview
 
-This module verifies the initial hardware environment configuration, Git repository initialization, and camera hardware interface setup for the Edge AI detection system.
+This module confirms that the repository workspace, dependencies, and physical camera input pipeline initialize reliably before running model inference.
 
-The hardware acquisition pipeline is engineered with a dual-backend abstraction:
-- **Raspberry Pi 5 Target Platform:** Native MIPI-CSI camera interface using `libcamera` and `Picamera2` hardware acceleration.
-- **Development & Diagnostics Platform:** Standard USB / V4L2 webcams accessed via OpenCV VideoCapture (`cv2.VideoCapture(0)`).
+We structure frame acquisition with a clean fallback design:
+- **Raspberry Pi 5 Target Platform:** Native CSI-2 camera stream driven through `libcamera` and `Picamera2`.
+- **Workstation & USB Diagnostics:** Standard V4L2/UVC USB webcam streams read via OpenCV (`cv2.VideoCapture(0)`).
 
 ---
 
-## 2. Visual Hardware & Camera Acquisition Evidence
+## 2. Camera Wiring & Acquisition Proof
 
-### 2.1 Camera Hardware Interface & Initial Frame Verification
-The image below demonstrates the very first unannotated camera frame captured directly from the camera sensor during system initialization and connectivity verification via [`test_connection.py`](../../../test_connection.py):
+### 2.1 Workstation Camera Binding & Initial Live Stream
+The capture below documents the physical USB ring-light webcam wired alongside the Raspberry Pi 5 jumper harness while initializing the live BenQ monitor stream via [`test_connection.py`](../../../test_connection.py):
 
-![Camera First Frame Capture](./camera_visuals/camera_connection_first_frame.jpg)
-*Figure 1.1: Initial sensor frame buffer capture (`camera_connection_first_frame.jpg`) verifying hardware exposure, V4L2/libcamera sensor binding, and zero frame buffer corruption at 640×480 resolution.*
+![Camera Hardware & Live Feed Setup](./camera_visuals/camera_connection_first_frame.jpg)
+*Figure 1.1: Physical workstation setup (`camera_connection_first_frame.jpg`) verifying active USB camera binding, GPIO bench cabling, and live feed output without initialization dropouts.*
 
 - **Image Filename:** [`camera_connection_first_frame.jpg`](./camera_visuals/camera_connection_first_frame.jpg)
-- **Sensor Index:** Device ID `/dev/video0` (index `0`)
-- **Native Resolution:** 640 × 480 pixels, 3 channels (BGR format)
-- **Technical Demonstration:** Proves that the camera driver initializes successfully without buffer underflow or invalid descriptor faults, delivering raw pixel buffers ready for pipeline letterboxing.
+- **Camera Interface:** USB UVC / V4L2 Device `/dev/video0` (index `0`)
+- **Stream Geometry:** 640 × 480 BGR pipeline buffer
+- **Verification Outcome:** Confirms clean device enumeration, balanced indoor exposure, and zero descriptor or frame-buffer errors ahead of model preprocessing.
 
 ---
 
-### 2.2 Continuous Live Camera Feed Verification
-The image below captures a representative unaugmented frame from the active video streaming thread managed by [`src/camera.py`](../../../src/camera.py):
+### 2.2 Continuous Live Stream Check
+Below is a continuous raw frame grabbed from the background capture thread inside [`src/camera.py`](../../../src/camera.py):
 
 ![Live Camera Stream Frame](./camera_visuals/live_camera_feed_frame.jpg)
-*Figure 1.2: Unannotated live video acquisition frame (`live_camera_feed_frame.jpg`) confirming continuous non-blocking frame retrieval in the live edge environment.*
+*Figure 1.2: Unannotated live stream frame (`live_camera_feed_frame.jpg`) verifying smooth continuous capture under overhead lab lighting.*
 
 - **Image Filename:** [`live_camera_feed_frame.jpg`](./camera_visuals/live_camera_feed_frame.jpg)
-- **Frame Source:** Camera capture loop executing at nominal 30 FPS.
-- **Technical Demonstration:** Validates real-time exposure balance, dynamic contrast handling under indoor ambient lighting, and non-blocking queue ingestion prior to OpenCV letterboxing.
+- **Capture Rate:** Nominal 30 FPS threaded acquisition.
+- **Verification Outcome:** Demonstrates steady white balance and low-latency queue delivery prior to letterbox resizing.
 
 ---
 

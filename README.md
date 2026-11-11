@@ -1,6 +1,6 @@
 # Raspberry Pi Camera Enclosure Detection using Edge AI
 
-An end-to-end Edge AI object detection pipeline designed to detect a **Raspberry Pi Camera Enclosure** in real time on a **Raspberry Pi 5** and desktop platforms using a fine-tuned **YOLO26 Nano** model.
+An end-to-end Edge AI computer vision workflow built to detect a custom **Raspberry Pi Camera Enclosure** in real time on a **Raspberry Pi 5** and desktop workstations using a fine-tuned **YOLO26 Nano** detector.
 
 [![YOLO26 Nano](https://img.shields.io/badge/Architecture-YOLO26%20Nano-blue.svg)](https://github.com/ultralytics/ultralytics)
 [![Roboflow Version 3](https://img.shields.io/badge/Roboflow-Version%203%20(Trained)-brightgreen.svg)](https://app.roboflow.com/satheesh-b-4hbyc/m1_m2-ckduy/1)
@@ -12,13 +12,13 @@ An end-to-end Edge AI object detection pipeline designed to detect a **Raspberry
 
 ## 1. Project Overview
 
-This project implements robust, low-latency object detection for the custom Raspberry Pi camera enclosure across challenging edge conditions:
-- Enclosure held in hand vs. placed on cluttered desks
-- Connected flat ribbon cables and diverse viewing angles
-- Variable indoor lighting (bright day vs. dim night)
-- **Zero-false-positive rejection** on plain walls, folded curtains, windows, and empty hands.
+This repository covers data auditing, training, ONNX optimization, and live hardware testing for identifying the Raspberry Pi camera enclosure under practical conditions:
+- Handheld workstation holds vs. matte desk mat placements
+- Attached flat CSI ribbon cables across tilted viewing angles
+- Changing indoor exposure (daylit windows vs. dark chalkboard studio background)
+- **Zero-false-positive suppression** on empty walls, curtains, keyboards, and bare hands.
 
-The detected object is the **Raspberry Pi Camera Enclosure**, an original hardware component designed as an **Individual Design and Research Project (IDRP)** by **Satheesh** in Autodesk Fusion 360 and fabricated via FDM 3D printing.
+The target physical part is the **Raspberry Pi Camera Enclosure**, created as an **Individual Design and Research Project (IDRP)** by **Satheesh** in Autodesk Fusion 360 and 3D printed via FDM fabrication.
 
 ---
 
@@ -161,7 +161,7 @@ edge_ai_m1_m2/
 
 ## 5. CAD Design Evidence: IDRP Hardware Component
 
-The custom Raspberry Pi Camera Enclosure was modeled by **Satheesh** as an **Individual Design and Research Project (IDRP)** to provide rigid optical alignment, impact protection, and strain-relieved ribbon cable routing for edge computer vision.
+The Raspberry Pi Camera Enclosure was engineered by **Satheesh** as an **Individual Design and Research Project (IDRP)** to give the camera PCB rigid optical alignment, drop protection, and clean FFC ribbon strain relief during edge testing.
 
 ### 5.1 Primary CAD Model Previews
 

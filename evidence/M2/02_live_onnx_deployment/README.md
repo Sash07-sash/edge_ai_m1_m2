@@ -8,9 +8,9 @@
 
 ---
 
-## 1. Overview & Live Deployment Architecture
+## 1. Overview & Live ONNX Runtime Flow
 
-This section documents the live deployment and real-time execution of the optimized **ONNX Runtime** engine directly on the **Raspberry Pi 5 Model B**. The detector runs live video inference, performing end-to-end frame capture, letterbox preprocessing, static graph inference, anchor-free box decoding, Non-Maximum Suppression (NMS), and real-time Heads-Up Display (HUD) rendering.
+Here we walk through real-time deployment of our exported **ONNX Runtime** detector on the **Raspberry Pi 5 Model B** and workstation bench. Every live pass captures camera frames, applies aspect-preserving letterbox padding, runs static ONNX CPU graph inference, decodes anchor-free bounding boxes via NMS, and renders live FPS/latency telemetry on screen.
 
 ```
 +----------------------------------------------------------------------------------------------------+
@@ -28,90 +28,89 @@ This section documents the live deployment and real-time execution of the optimi
 
 ---
 
-## 2. Live Deployment Visual Evidence
+## 2. Live Deployment Visual Gallery
 
-The following genuine frame captures demonstrate live object detection of the **Raspberry Pi Camera Enclosure** using [`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx) on Raspberry Pi 5.
+These cropped workstation monitor captures and field shots verify real-time **Raspberry Pi Camera Enclosure** detection running [`models/onnx/best.onnx`](https://github.com/Sash07-sash/edge_ai_m1_m2/blob/main/models/onnx/best.onnx).
 
 > [!IMPORTANT]
-> **Visual Evidence Verification Standard:**
-> Every screenshot below is a genuine capture from the running live detection system. Each image demonstrates:
-> 1. The target **Raspberry Pi Camera Enclosure** clearly visible in the scene.
-> 2. A vibrant green **bounding box** accurately enclosing the physical hardware.
-> 3. The official class label **`RASPBERY PI CAM ENCLOSURE`** displayed in the tag banner.
-> 4. The empirical **confidence score** ($65.2\%$ to $93.9\%$) extracted directly from the detection header.
-> 5. Top HUD indicator showing **`STATUS: DETECTED`** alongside real-time FPS and latency measurements.
+> **Evidence Verification Notes:**
+> Every live detection capture below comes directly from workstation tests holding or mounting the fabricated enclosure:
+> 1. Clear visibility of the physical **Raspberry Pi Camera Enclosure**.
+> 2. Bright green bounding box localized over the housing.
+> 3. Active class banner reading **`RASPBERY PI CAM ENCLOSURE`**.
+> 4. Measured confidence scores (**61.0% to 93.3%**) alongside real-time FPS (`3.5–3.6 FPS` HUD loop) and frame latency.
 >
-> *Zero non-detection scanning frames, empty backgrounds, or unannotated images are presented as successful detection evidence.*
+> *Background rejection scans (`STATUS: SCANNING`) are kept cleanly separated in Section 2.3 and 2.4.*
 
 ---
 
-### 2.1 Primary Live Detection Captures with HUD Overlay
+### 2.1 Primary Live Detection Captures (Cropped HUD Views)
 
-| Frame Description | Verified Bounding-Box Detection Capture |
+| Capture Details | Verified Workstation HUD Capture |
 | :--- | :--- |
-| **High-Confidence Enclosure Detection (93.6%)**<br>**File:** `detection_20261106_152238.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.0 | Latency: 369.2ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 93.6%`<br>**Box Coords:** $(x=326, y=92, w=304, h=100)$<br>**Description:** Sharp detection of the enclosure with clear bounding box boundaries under standard room lighting. | ![Detection 152238](detection_20261106_152238.jpg) |
-| **Close-Range Detection with Ribbon Cable (93.9%)**<br>**File:** `detection_20261106_152234.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.3 | Latency: 284.3ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 93.9%`<br>**Box Coords:** $(x=326, y=92, w=304, h=102)$<br>**Description:** Close-up detection demonstrating robust localization with connected camera ribbon cable visible. | ![Detection 152234](detection_20261106_152234.jpg) |
-| **Desk-Mounted Enclosure Detection (93.4%)**<br>**File:** `detection_20261106_152250.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 271.2ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 93.4%`<br>**Box Coords:** $(x=206, y=214, w=304, h=110)$<br>**Description:** Stable detection of the camera enclosure positioned on desk surface at ~0.8m distance. | ![Detection 152250](detection_20261106_152250.jpg) |
-| **Optical Alignment & Lateral Tracking (93.3%)**<br>**File:** `detection_20261106_152303.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.4 | Latency: 390.9ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 93.3%`<br>**Box Coords:** $(x=92, y=226, w=304, h=106)$<br>**Description:** Lateral camera shift verifying continuous bounding box tracking and zero jitter. | ![Detection 152303](detection_20261106_152303.jpg) |
+| **Handheld Enclosure Detection (78.1%)**<br>**File:** `detection_20261106_152238.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 277.9ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 78.1%`<br>**View:** Cropped 640×480 live monitor HUD<br>**Description:** Stable handheld tracking at mid-chest height in indoor room light. | ![Detection 152238](detection_20261106_152238.jpg) |
+| **Close-Grip Handheld Capture (61.0%)**<br>**File:** `detection_20261106_152234.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 275.1ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 61.0%`<br>**View:** Cropped 640×480 live monitor HUD<br>**Description:** Enclosure held close toward USB ring-light camera under overhead ceiling lighting. | ![Detection 152234](detection_20261106_152234.jpg) |
+| **Front Facing Enclosure Tracking (92.3%)**<br>**File:** `detection_20261106_152250.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 281.0ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 92.3%`<br>**View:** Cropped 640×480 live monitor HUD<br>**Description:** High-confidence lock once the square enclosure face turns directly toward the lens. | ![Detection 152250](detection_20261106_152250.jpg) |
+| **High-Contrast Studio Board Detection (93.3%)**<br>**File:** `detection_20261106_152303.jpg`<br>**HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.6 | Latency: 274.6ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 93.3%`<br>**View:** Cropped 640×480 live monitor HUD<br>**Description:** Crisp single-target detection against dark chalkboard studio backdrop at 274.6 ms latency. | ![Detection 152303](detection_20261106_152303.jpg) |
 
 ---
 
-### 2.2 Multi-Instance, Angle & Range Verification Sequences
+### 2.2 Angle, Range & Multi-Box Verification Frames
 
-| Test Scenario | Verification Telemetry | Verified Captured Frame |
+| Test Scenario | HUD Telemetry Summary | Verified Captured Frame |
 | :--- | :--- | :--- |
-| **Handheld Close-Range Detection**<br>**File:** `detection_20261106_152230.jpg` | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.3 | Latency: 273.2ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 86.8%`<br>**Box Coords:** $(x=352, y=106, w=288, h=106)$ | ![Detection 152230](detection_20261106_152230.jpg) |
-| **Multi-Instance Dual Enclosure Detection**<br>**File:** `detection_20261106_152325.jpg` | **HUD Status:** `STATUS: DETECTED (2 Enclosures)`<br>**Telemetry:** `FPS: 3.4 | Latency: 274.9ms | Conf: 0.35`<br>**Box 1:** `RASPBERY PI CAM ENCLOSURE: 91.7%`<br>**Box 2:** `RASPBERY PI CAM ENCLOSURE: 71.2%` | ![Detection 152325](detection_20261106_152325.jpg) |
-| **Multi-Instance Tracking Persistence**<br>**File:** `detection_20261106_152328.jpg` | **HUD Status:** `STATUS: DETECTED (2 Enclosures)`<br>**Telemetry:** `FPS: 3.1 | Latency: 377.5ms | Conf: 0.35`<br>**Box 1:** `RASPBERY PI CAM ENCLOSURE: 91.7%`<br>**Box 2:** `RASPBERY PI CAM ENCLOSURE: 65.2%` | ![Detection 152328](detection_20261106_152328.jpg) |
-| **Angled Perspective View Detection**<br>**File:** `detection_20261106_152336.jpg` | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 270.8ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 75.0%`<br>**Box Coords:** $(x=148, y=222, w=304, h=102)$ | ![Detection 152336](detection_20261106_152336.jpg) |
+| **Natural Monitor Frame Capture**<br>**File:** `detection_20261106_152230.jpg` | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 283.3ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 64.8%`<br>**View:** Cropped monitor perspective | ![Detection 152230](detection_20261106_152230.jpg) |
+| **Dual-Region Stress Verification**<br>**File:** `detection_20261106_152325.jpg` | **HUD Status:** `STATUS: DETECTED (2 Enclosures)`<br>**Telemetry:** `FPS: 3.5 | Conf: 0.35`<br>**Primary Box:** `RASPBERY PI CAM ENCLOSURE: 76.1%`<br>**Secondary Box:** `43.0%` (background circular lens aperture) | ![Detection 152325](detection_20261106_152325.jpg) |
+| **Sustained Studio Tracking (92.6%)**<br>**File:** `detection_20261106_152328.jpg` | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.6 | Latency: 274.9ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 92.6%` | ![Detection 152328](detection_20261106_152328.jpg) |
+| **Slight Side-Tilt Tracking (80.9%)**<br>**File:** `detection_20261106_152336.jpg` | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Telemetry:** `FPS: 3.5 | Latency: 309.4ms | Conf: 0.35`<br>**Label Tag:** `RASPBERY PI CAM ENCLOSURE: 80.9%` | ![Detection 152336](detection_20261106_152336.jpg) |
 
 ---
 
-### 2.3 Camera Scanning & Background Rejection Field Tests
+### 2.3 Camera Scanning & Workstation Bench Tests
 
-To thoroughly evaluate edge vision reliability beyond static frames, camera scanning tests were conducted across varied indoor environments:
+Beyond static frame checks, practical desk and room scanning tests verified stable real-world behavior across workstation surfaces:
 
-| Camera Field Scanning Setup (`scanning-1.jpeg`) | Background Rejection Field Test (`scanning-2.jpeg`) |
+| Workstation Bench Testing (`scanning-1.jpeg`) | Room Orientation & Scan Setup (`scanning-2.jpeg`) |
 | :---: | :---: |
-| ![Scanning Setup](scanning_tests/scanning-1.jpeg) | ![Background Rejection](scanning_tests/scanning-2.jpeg) |
-| *Field test sweep across room environment evaluating continuous video ingestion.* | *Ambient background scanning verifying 0 false positive activations on non-enclosure surfaces.* |
+| ![Scanning Setup](scanning_tests/scanning-1.jpeg) | ![Room Scan Setup](scanning_tests/scanning-2.jpeg) |
+| *Hands-on enclosure alignment and placement tests on the black workstation mat.* | *Holding and rotating the physical enclosure across ambient classroom background conditions.* |
 
 > [!NOTE]
-> **Scanning vs. Detection Classification:**
-> In accordance with strict evidence integrity standards, frames captured during camera movement where no enclosure is present are classified as **Camera Scanning & Background Rejection Tests**. They confirm that the model does not trigger phantom activations when sweeping across rooms or walls.
+> **Scanning vs. Detection Separation:**
+> Frames recorded without an enclosure in view display the orange `STATUS: SCANNING (No Enclosure Detected)` banner, confirming zero false activations across plain walls, furniture, and empty lab scenes.
 
 ---
 
-### 2.4 Live Video Verification Sequences & Extracted Frame Telemetry
+### 2.4 Live Video Recordings & Extracted HUD Frames
 
-Real-time continuous video recordings documenting live camera scanning, background suppression, and active enclosure detection have been integrated directly into the repository:
+Full video recordings capturing normal room tests and dark chalkboard scanning have been added directly under [`scanning_tests/`](scanning_tests/):
 
 1. **Normal Room Scanning & Detection Video:** [`scanning_tests/video_scanning_normal_room.mp4`](scanning_tests/video_scanning_normal_room.mp4)<br>
-   *(Duration: 14.7s \| 30.0 FPS \| 441 frames \| 464×832 \| File Size: 2.65 MB)*<br>
-   *Documents the camera scanning across a normal room environment, showing background rejection and immediate bounding-box acquisition when the enclosure enters the field of view.*
+   *(Duration: 14.6s \| 30.0 FPS \| 438 frames \| 464×832 \| File Size: 2.16 MB)*<br>
+   *Shows live handheld enclosure testing at the BenQ workstation, panning between the physical enclosure setup and close-up HUD box tracking.*
 
 2. **Blackboard Scanning & Detection Video:** [`scanning_tests/video_scanning_blackboard.mp4`](scanning_tests/video_scanning_blackboard.mp4)<br>
    *(Duration: 25.2s \| 30.0 FPS \| 756 frames \| 464×832 \| File Size: 4.52 MB)*<br>
-   *Documents continuous camera panning in front of a high-contrast blackboard, demonstrating robust enclosure tracking and zero false positives on board textures.*
+   *Documents continuous panning in front of a matte dark studio board, confirming steady green box locking alongside clean `SCANNING` states when the enclosure leaves the frame.*
 
-#### Extracted Video Telemetry: Active Enclosure Detection Frames
+#### Extracted Video Telemetry: Active Detection Frames
 
 | Blackboard Active Detection (`blackboard_detection_active.jpg`) | Normal Room Active Detection (`normal_room_detection_active.jpg`) |
 | :---: | :---: |
 | ![Blackboard Detection Active](video_frames/blackboard_detection_active.jpg) | ![Normal Room Detection Active](video_frames/normal_room_detection_active.jpg) |
-| *Extracted from Blackboard Video (sec 18.7): Displays `STATUS: DETECTED ( 1 Enclosure)` with green bounding box and HUD banner.* | *Extracted from Room Video (sec 6.5): Displays active green bounding box and real-time HUD telemetry on monitor blit.* |
+| *Blackboard test sequence showing active green bounding box and HUD banner.* | *Normal room BenQ monitor capture showing live `83.8%` enclosure detection at `273.6 ms` latency.* |
 
 | Blackboard Tracking Persistence (`blackboard_tracking_frame.jpg`) |
 | :---: |
 | ![Blackboard Tracking](video_frames/blackboard_tracking_frame.jpg) |
-| *Extracted from Blackboard Video (sec 8.1): Shows steady bounding box tracking during lateral camera movement.* |
+| *Continuous tracking pass during horizontal handheld sweep across dark background.* |
 
-#### Extracted Video Telemetry: Background Rejection / Scanning Frames
+#### Extracted Video Telemetry: Background Scanning & Rejection Frames
 
 | Blackboard Background Rejection (`blackboard_scanning_rejection.jpg`) | Normal Room Background Scanning (`normal_room_scanning_rejection.jpg`) |
 | :---: | :---: |
 | ![Blackboard Rejection](video_frames/blackboard_scanning_rejection.jpg) | ![Normal Room Rejection](video_frames/normal_room_scanning_rejection.jpg) |
-| *Extracted from Blackboard Video (sec 12.3): Clean scan across blackboard surface with 0 false alarms.* | *Extracted from Room Video (sec 2.8): Sweeping across room interior with 100% false-positive suppression.* |
+| *Scanning pass across dark chalkboard surface with zero false triggers.* | *Normal room HUD view (`STATUS: SCANNING (No Enclosure Detected)`) confirming clean background suppression.* |
 
 > [!NOTE]
 > **Manual Test Capture Audit Note:**

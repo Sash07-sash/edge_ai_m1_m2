@@ -8,40 +8,40 @@
 
 ## 1. Overview
 
-This module documents the unaccelerated baseline inference speed, pipeline latency, and system hardware utilization of the PyTorch YOLO26 Nano model (`models/best.pt`) executing directly on the Raspberry Pi 5 CPU prior to runtime graph optimization.
+This section records the baseline execution speed, frame-to-frame latency, and system resource behavior for the unoptimized PyTorch YOLO26 Nano model (`models/best.pt`) running directly on the Raspberry Pi 5 CPU before ONNX conversion.
 
-For the comprehensive engineering performance evaluation, refer to:
-* **Comprehensive Performance Report:** [`evidence/M1/M1_Baseline_Performance_Report.md`](../M1_Baseline_Performance_Report.md)
+Full per-frame breakdowns and hardware readings are compiled in:
+* **Full Baseline Report:** [`evidence/M1/M1_Baseline_Performance_Report.md`](../M1_Baseline_Performance_Report.md)
 
 ---
 
-## 2. Visual Performance Evidence & Telemetry Screenshots
+## 2. Visual Performance Evidence & Live Captures
 
-### 2.1 Live Baseline Inference Screenshots (HUD Telemetry)
-The unaccelerated PyTorch model exhibits significant frame-to-frame latency due to unoptimized FP32 graph traversal on CPU:
+### 2.1 Live Inference Monitor Captures (HUD Overlay)
+Before ONNX graph optimization, unquantized PyTorch CPU inference experiences heavy initialization spikes alongside ~273–320 ms steady-state frames:
 
-| Screenshot | Description & Observed Latency | HUD Telemetry Details |
+| Capture Preview | Benchmark Role & Setup | Visible HUD & Benchmark Metrics |
 | :---: | :--- | :--- |
-| ![Baseline 8880ms](./benchmark_visuals/baseline_inference_latency_8880ms.jpg) | **Single-Thread Peak Latency:** Unaccelerated PyTorch execution ([Inspect](./benchmark_visuals/baseline_inference_latency_8880ms.jpg)) | **Latency:** 8,880.5 ms<br>**Frame Rate:** 0.1 FPS<br>**Detection:** 86.9% conf |
-| ![Baseline 13908ms](./benchmark_visuals/baseline_inference_latency_13908ms.jpg) | **Cold-Start Worst-Case Latency:** Initial thread execution spike ([Inspect](./benchmark_visuals/baseline_inference_latency_13908ms.jpg)) | **Latency:** 13,908.3 ms<br>**Frame Rate:** 0.1 FPS<br>**Detection:** 53.5% conf |
+| ![Baseline Monitor Capture 1](./benchmark_visuals/baseline_inference_latency_8880ms.jpg) | **High-Confidence Single-Enclosure Capture:** Cropped BenQ workstation display ([Inspect](./benchmark_visuals/baseline_inference_latency_8880ms.jpg)) | **Live HUD:** 3.5 FPS \| 273.6 ms \| 83.8% conf<br>**Logged Cold-Start Peak:** 8,880.5 ms (0.1 FPS) |
+| ![Baseline Monitor Capture 2](./benchmark_visuals/baseline_inference_latency_13908ms.jpg) | **Sustained Execution & Cold-Start Comparison:** Cropped BenQ workstation display ([Inspect](./benchmark_visuals/baseline_inference_latency_13908ms.jpg)) | **Live HUD:** 3.5 FPS \| 274.5 ms \| 53.1% conf<br>**Worst-Case Init Spike:** 13,908.3 ms (0.1 FPS) |
 
 ---
 
-### 2.2 Empirical Benchmark Plots (Derived Directly from 262-Frame CSV Logs)
+### 2.2 Benchmark Plots (Generated from 262-Frame CSV Logs)
 
-The following charts were programmatically plotted from the genuine 262-frame timing and telemetry logs in [`evidence/M1/csv/baseline_m1_measurements.csv`](../csv/baseline_m1_measurements.csv):
+All charts below come directly from the 262 consecutive frames logged in [`evidence/M1/csv/baseline_m1_measurements.csv`](../csv/baseline_m1_measurements.csv):
 
-#### Frame-by-Frame Pipeline Latency Profile
+#### Frame-by-Frame Latency Trace
 ![Baseline Latency Profile](./benchmark_visuals/m1_baseline_latency_profile.png)
-*Figure 3.1: Frame-by-frame latency breakdown showing total pipeline latency vs. raw model inference latency across 262 consecutive evaluation frames on Raspberry Pi 5.*
+*Figure 3.1: Total pipeline latency vs. raw model forward-pass latency across 262 live Raspberry Pi 5 frames.*
 
-#### System Hardware Telemetry (CPU & SoC Temperature)
+#### Hardware Resource & Thermal Trace (CPU & SoC Temperature)
 ![System Telemetry Profile](./benchmark_visuals/m1_baseline_system_telemetry.png)
-*Figure 3.2: Raspberry Pi 5 hardware telemetry recorded during the 5-minute benchmark run: Total CPU load averaged 55.7% with SoC temperatures rising +12.1°C without triggering thermal throttling (0x0).*
+*Figure 3.2: Raspberry Pi 5 resource trace across the 5-minute run: mean CPU load stayed at 55.7% while SoC temperature climbed +12.1°C with zero thermal throttling (`0x0`).*
 
-#### Baseline vs. Milestone 2 Optimization Comparison
+#### Baseline PyTorch vs. Milestone 2 ONNX Speedup
 ![M1 vs M2 Speedup Comparison](./benchmark_visuals/m1_baseline_vs_m2_onnx_speedup.png)
-*Figure 3.3: Direct benchmark comparison between Milestone 1 unaccelerated PyTorch CPU and Milestone 2 accelerated ONNX Runtime CPU, confirming an 80.7% throughput improvement.*
+*Figure 3.3: Side-by-side comparison between M1 baseline PyTorch CPU execution and M2 ONNX Runtime CPU acceleration, showing an 80.7% throughput boost.*
 
 ---
 

@@ -6,13 +6,13 @@
 
 ---
 
-## 1. Overview & Dataset Version Distinction
+## 1. Overview & Dataset Version History
 
 > [!IMPORTANT]
-> **Academic Integrity & Version Distinction:**
-> - **Historical Milestone 1 Dataset (Version 1):** Comprises **124 initial images** (88 Train, 24 Valid, 12 Test). An extensive quality assurance audit was performed on this dataset to uncover the root causes of early baseline detector failure.
-> - **Roboflow Production Dataset (Version 3):** Developed through iterative quality engineering to rectify the five failure modes identified during the M1 audit. It contains **159 unique source images** (including 20 true negative background scenes) expanded to **274 images** via $2\times$ training augmentation.
-> - Version 3 is preserved independently under [`datasets/Roboflow_M1_M2_V3/`](../../../datasets/Roboflow_M1_M2_V3/) and must **not** be conflated with the historical 124-image baseline dataset.
+> **Dataset Revisions:**
+> - **Baseline Milestone 1 Dataset (Version 1):** Contains **124 early photographs** (88 Train, 24 Valid, 12 Test). Auditing this baseline set pinned down why early detector builds misclassified background textures and skin tones.
+> - **Production Roboflow Dataset (Version 3):** Built to fix every quality defect surfaced in the Version 1 audit. It combines **159 distinct source frames** (including 20 negative empty-background shots) expanded to **274 images** with 2× training augmentation.
+> - Version 3 lives separately inside [`datasets/Roboflow_M1_M2_V3/`](../../../datasets/Roboflow_M1_M2_V3/) so historical baseline comparisons remain clean.
 
 ---
 

@@ -1,5 +1,6 @@
 # Milestone 2 (M2) — Model Optimization & Evaluation Master Evidence Index
 
+**Author / Maintainer:** Satheesh
 **Project:** Raspberry Pi Camera Enclosure Detection using Edge AI
 **Repository:** [`Sash07-sash/edge_ai_m1_m2`](https://github.com/Sash07-sash/edge_ai_m1_m2)
 **Branch:** `main`
@@ -16,9 +17,9 @@ All practical demonstration photographs, hardware images, camera captures, scree
 
 ---
 
-## 1. M2 Assessment Evidence Navigation Matrix
+## 1. M2 Criteria & Evidence Index
 
-The table below maps each official Milestone 2 assessment criterion directly to its dedicated evidence directory, technical documentation, and assessment sheet cell identifier:
+Each Milestone 2 grading criterion is linked below to its dedicated evidence directory, summary report, and assessment tracking cell:
 
 | Assessment Criterion | Mark Weight | Target Sheet Cell | Dedicated Evidence Directory | Primary Documentation & Artifacts |
 | :--- | :---: | :---: | :--- | :--- |
@@ -70,18 +71,18 @@ evidence/M2/
 │   └── onnx_export_log.json               # Structured export metadata
 ├── 02_live_onnx_deployment/               # Criterion 2: Convert & Run Live (4 Marks)
 │   ├── README.md                          # Live deployment walkthrough & pipeline architecture
-│   ├── detection_20261106_152230.jpg      # Handheld enclosure detection frame (86.8% conf)
-│   ├── detection_20261106_152234.jpg      # Close-range ribbon-cable detection frame (93.9% conf)
-│   ├── detection_20261106_152238.jpg      # High-confidence detection frame (93.6% conf)
-│   ├── detection_20261106_152250.jpg      # Desk-mounted detection frame (93.4% conf)
-│   ├── detection_20261106_152303.jpg      # Lateral tracking detection frame (93.3% conf)
-│   ├── detection_20261106_152325.jpg      # Multi-instance dual enclosure detection (91.7% / 71.2%)
-│   ├── detection_20261106_152328.jpg      # Multi-instance tracking persistence (91.7% / 65.2%)
-│   ├── detection_20261106_152336.jpg      # Angled perspective detection frame (75.0% conf)
-│   ├── scanning_tests/                    # Camera scanning photos & normal-room/blackboard MP4 videos
-│   │   ├── scanning-1.jpeg                # Room scanning field test photo
-│   │   ├── scanning-2.jpeg                # Ambient room test photo (100% background rejection)
-│   │   ├── video_scanning_normal_room.mp4 # Video: Normal room scanning & detection (14.7s)
+│   ├── detection_20261106_152230.jpg      # Cropped monitor enclosure detection (64.8% conf)
+│   ├── detection_20261106_152234.jpg      # Handheld enclosure detection frame (61.0% conf)
+│   ├── detection_20261106_152238.jpg      # Mid-frame enclosure detection capture (78.1% conf)
+│   ├── detection_20261106_152250.jpg      # Front-facing high-confidence detection (92.3% conf)
+│   ├── detection_20261106_152303.jpg      # Studio blackboard enclosure detection (93.3% conf)
+│   ├── detection_20261106_152325.jpg      # Dual-region stress detection (76.1% / 43.0%)
+│   ├── detection_20261106_152328.jpg      # Sustained studio detection capture (92.6% conf)
+│   ├── detection_20261106_152336.jpg      # Angled enclosure detection capture (80.9% conf)
+│   ├── scanning_tests/                    # Workstation scanning photos & normal-room/blackboard MP4 videos
+│   │   ├── scanning-1.jpeg                # Workstation desk mat orientation test photo
+│   │   ├── scanning-2.jpeg                # Ambient room test photo (Satheesh bench run)
+│   │   ├── video_scanning_normal_room.mp4 # Video: Normal room workstation & HUD test (14.6s)
 │   │   └── video_scanning_blackboard.mp4  # Video: Blackboard scanning & detection (25.2s)
 │   └── video_frames/                      # Extracted video telemetry frames (detection & scanning)
 │       ├── normal_room_detection_active.jpg

@@ -1,6 +1,6 @@
 # Milestone 1 (M1) Central Evidence Index & Navigation Matrix
 
-This directory serves as the primary evaluation portal for **Milestone 1 (M1)** of the Edge AI Raspberry Pi Camera Enclosure Detection project. It aggregates all experimental verification records, baseline benchmarks, dataset audit artifacts, the hardware CAD engineering evidence, and the **Roboflow Dataset Version 3** integration.
+Welcome to the central index for **Milestone 1 (M1)** of Satheesh's Edge AI Raspberry Pi Camera Enclosure Detection project. All hardware captures, live monitor HUD screenshots, speed logs, dataset audits, CAD files, and the **Roboflow Dataset Version 3** release are organized below.
 
 ---
 

@@ -8,10 +8,10 @@
 
 ## 1. Overview
 
-This module verifies that the dataset splits across training, validation, and testing sets are correctly balanced, isolated, and representative of real-world operational domains without data leakage.
+This check validates that our training, validation, and held-out test partitions remain strictly separated, balanced across scenarios, and free of duplicate image leakage.
 
-For the comprehensive dataset audit and collision checks, refer to:
-* **Dedicated Split Report:** [`M1_Dataset_Split_Report.md`](./M1_Dataset_Split_Report.md)
+Complete file-level collision checks and domain notes are inside:
+* **Full Split Verification Report:** [`M1_Dataset_Split_Report.md`](./M1_Dataset_Split_Report.md)
 
 ---
 

@@ -11,9 +11,9 @@
 
 ## 1. Project Overview
 
-This evaluation establishes the official **Milestone 1 (M1) Baseline Performance** for real-time edge detection of the official Raspberry Pi camera enclosure. Training was conducted on Roboflow Cloud using a fine-tuned YOLO26 Nano architecture (**Model Version 3**) incorporating 20 true negative background samples to resolve previous false-positive wall and curtain triggers.
+This benchmark establishes our **Milestone 1 (M1) Reference Baseline** for detecting the custom Raspberry Pi camera enclosure on edge hardware. Trained on Roboflow Cloud using **YOLO26 Nano (Version 3)**, the dataset includes 20 clean negative background captures to suppress false alarms on empty walls, desks, and curtains.
 
-The objective of M1 is to thoroughly benchmark the original, unquantized PyTorch FP32 checkpoint (`models/best.pt`) running directly on the Raspberry Pi 5 CPU prior to applying edge optimization techniques (such as ONNX Runtime or INT8 quantization in Milestone 2).
+Here we measure the unquantized FP32 PyTorch checkpoint (`models/best.pt`) running natively on the Raspberry Pi 5 ARM CPU, creating an honest hardware reference point prior to our Milestone 2 ONNX Runtime acceleration work.
 
 ---
 
@@ -155,9 +155,9 @@ Measured over **262 continuous frames** during the 5-minute sustained test:
 
 The empirical data recorded during physical testing has been synthesized into genuine scientific benchmark profiles:
 
-### 10.1 Live Latency Telemetry Screenshot
-![Baseline HUD Latency 8880ms](./03_baseline_speed/benchmark_visuals/baseline_inference_latency_8880ms.jpg)
-*Figure 10.1: Live HUD capture (`baseline_inference_latency_8880ms.jpg`) showing baseline single-thread unaccelerated execution peaking at 8,880.5 ms (0.1 FPS) during unquantized PyTorch CPU execution.*
+### 10.1 Live Monitor Capture (HUD Telemetry)
+![Baseline HUD Monitor Capture](./03_baseline_speed/benchmark_visuals/baseline_inference_latency_8880ms.jpg)
+*Figure 10.1: Cropped live workstation monitor capture (`baseline_inference_latency_8880ms.jpg`) displaying real-time Raspberry Pi Camera Enclosure tracking at 83.8% confidence (3.5 FPS, 273.6 ms HUD step), paired with the 8,880.5 ms cold-start PyTorch execution trace logged in the M1 benchmark table.*
 
 ### 10.2 Continuous 262-Frame Latency Breakdown
 ![Baseline Latency Profile](./03_baseline_speed/benchmark_visuals/m1_baseline_latency_profile.png)
@@ -203,17 +203,14 @@ Eight physical scenarios were tested using the live USB camera feed on the Raspb
 | **7** | **Lower Lighting** | Shadowed ambient lighting | **FAIL** | 0.0% | 955 ms | `annotated_scenario_7_low_light.jpg` |
 | **8** | **Complex Background** | Held against desk clutter & cables | **FAIL** | 0.0% | 837 ms | `annotated_scenario_8_complex_bg.jpg` |
 
-### Physical Live Detection Evidence Gallery
-During interactive camera verification, a series of 21 verified live detection snapshots were captured directly from the USB camera feed on the Raspberry Pi 5 (`evidence/M1/screenshots/` and `evidence/M1/detection_tests/`):
+### Physical Live Detection Snapshots
+Alongside the scenario checks above, 21 timestamped live frames and hardware views were saved directly during workstation testing (`evidence/M1/screenshots/` and `evidence/M1/detection_tests/`):
 
-- **High-Confidence Enclosure Detections:**
-  - `successful_usb_detection.jpg`: **91.1% Confidence** | Latency: 352.5 ms | FPS: 2.4 | Box: `[44.2, 323.7, 126.9, 388.9]`
-  - `detection_20261106_152227.jpg` through `detection_20261106_152238.jpg`: Sustained detection series with confidence ranging from **86.9% to 91.0%** across stable handheld views.
-  - `detection_20261106_152325.jpg` through `detection_20261106_152338.jpg`: Continuous multi-frame tracking confirming robust enclosure detection with full bounding box and HUD telemetry.
-  - `detection_20261106_152410.jpg`: Extended range detection verifying edge boundary stability.
+- **USB Webcam Hardware Verification (`successful_usb_detection.jpg`):** Live workstation view showing handheld enclosure positioning beside the ring-light USB camera with active bounding-box output rendered on the BenQ display.
+- **Workstation Detection Series (`detection_20261106_152227.jpg` – `detection_20261106_152410.jpg`):** Cropped live OpenCV HUD captures taken across handheld close-ups, blackboard studio passes, and room-lighting sweeps, reaching **53.1% to 93.3% confidence** during stable single-enclosure views and verifying background scanning suppression when no enclosure is held.
 
 > [!NOTE]
-> These verified physical camera captures demonstrate that under normal handheld and desk viewing angles, the baseline model achieves **87% to 91.1% confidence** at **~280–420 ms latency** on the Raspberry Pi 5 CPU. Extreme 90° edge profiles and unilluminated angles require the higher sensitivities being targeted in Milestone 2.
+> Live Raspberry Pi and workstation testing confirms steady-state baseline detections between **53% and 93.3% confidence** at **~273–420 ms CPU latency**, while tight oblique angles and heavy background clutter motivated the M2 optimization stage.
 
 ---
 

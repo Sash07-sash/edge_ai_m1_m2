@@ -10,9 +10,9 @@
 
 ## 1. Executive Summary
 
-This report provides the full evaluation record for Milestone 1 Criterion 6, covering model training convergence, held-out offline test predictions, real-time edge detection on the Raspberry Pi 5 camera, and rigorous failure mode analysis of baseline detection errors.
+This report summarizes the training behavior, offline held-out evaluation, live camera HUD testing, and documented detection errors for our Milestone 1 baseline detector.
 
-The model evaluated is the fine-tuned **YOLO26 Nano** architecture (`models/best.pt`, 5.17 MB), trained on Roboflow Version 3 across 311 converged epochs.
+All experiments run on the fine-tuned **YOLO26 Nano** checkpoint (`models/best.pt`, 5.17 MB) trained across 311 early-stopped epochs on Roboflow Dataset Version 3.
 
 ---
 
@@ -60,26 +60,26 @@ Visual evaluation on held-out test split images demonstrates sharp, tight boundi
 
 ---
 
-## 4. Subsection C: Live Raspberry Pi Detection (OpenCV Interface)
+## 4. Subsection C: Live OpenCV Detection Verification
 
-Live edge video testing was conducted on the Raspberry Pi 5 using the real-time OpenCV HUD pipeline:
+Real-time inference tests using the live OpenCV HUD overlay produced clear localization across both high-confidence single targets and multi-box edge scenes:
 
-| Live Scenario | OpenCV Screenshot with Telemetry HUD | Operational Analysis |
+| Live Scenario | OpenCV Screenshot with Telemetry HUD | Observed Metrics & Notes |
 | :---: | :---: | :--- |
-| **Center Enclosure Detection** | ![Live Det Single](./visual_evidence/live_det_01_opencv_hud.jpg) | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Confidence:** **93.3%** (`RASPBERY PI CAM ENCLOSURE`)<br>**Latency:** 390.9 ms \| **FPS:** 3.4 FPS<br>**Demonstration:** Verifies stable real-time tracking, letterbox unpadding, and zero coordinate offset. |
-| **Multi-Object Ingestion** | ![Live Det Multi](./visual_evidence/live_det_02_two_enclosures.jpg) | **HUD Status:** `STATUS: DETECTED (2 Enclosures)`<br>**Confidences:** **91.7%** and **71.2%**<br>**Latency:** 274.9 ms \| **FPS:** 3.4 FPS<br>**Demonstration:** Proves that NMS thresholding correctly retains multiple valid detections simultaneously. |
+| **Studio Enclosure Detection** | ![Live Det Single](./visual_evidence/live_det_01_opencv_hud.jpg) | **HUD Status:** `STATUS: DETECTED (1 Enclosure)`<br>**Confidence:** **93.3%** (`RASPBERY PI CAM ENCLOSURE`)<br>**Latency:** 274.6 ms \| **FPS:** 3.6 FPS<br>**Takeaway:** Confirms tight bounding-box alignment, clean unpadding, and high confidence against the dark studio backdrop. |
+| **Dual-Region Stress Detection** | ![Live Det Dual](./visual_evidence/live_det_02_two_enclosures.jpg) | **HUD Status:** `STATUS: DETECTED (2 Enclosures)`<br>**Confidences:** **76.1%** (handheld enclosure) and **43.0%** (circular background lens)<br>**FPS:** 3.5 FPS<br>**Takeaway:** Illustrates active NMS handling across dual candidate boxes while highlighting circular dark-lens sensitivity near threshold. |
 
 ---
 
-## 5. Subsection D: Baseline Detection Errors & Root Cause Analysis
+## 5. Subsection D: Baseline Detection Errors & Failure Analysis
 
-In accordance with rigorous academic engineering principles, failure cases from the baseline detector testing suite ([`evidence/M1/detection_tests/visual_tests_summary.json`](../detection_tests/visual_tests_summary.json)) were cataloged to guide Milestone 2 optimization:
+To guide Milestone 2 tuning, representative misses and false triggers captured during edge trials ([`evidence/M1/detection_tests/visual_tests_summary.json`](../detection_tests/visual_tests_summary.json)) are documented below:
 
-| Failure Mode | Actual Annotated Test Frame | Detailed Root Cause Analysis |
+| Failure Mode | Annotated Failure Capture | Engineering Root Cause |
 | :---: | :---: | :--- |
-| **Scenario 2: Side Profile Miss** | ![Side View Miss](./visual_evidence/error_scenario_2_side_view_miss.jpg) | **Observed Defect:** `FAIL (Not Detected)` (Confidence: 0.0%).<br>**Root Cause:** Extreme 90° side profile hides the circular camera lens aperture. The baseline training set contained fewer edge-profile training pairs, causing feature collapse on planar side faces.<br>**Mitigation Target:** Resolved in M2 through ONNX multi-angle fine-tuning. |
-| **Scenario 8: Complex Background Clutter** | ![Complex BG Miss](./visual_evidence/error_scenario_8_complex_bg_miss.jpg) | **Observed Defect:** `FAIL (Not Detected)` (Confidence: 0.0%).<br>**Root Cause:** Dark enclosure held against complex tangle of dark USB and power cables. Low local contrast and shadow masking drop feature saliency below the baseline $0.35$ threshold. |
-| **Scenario 4: Extreme Near-Distance Truncation** | ![Near Distance Miss](./visual_evidence/error_scenario_4_near_distance_miss.jpg) | **Observed Defect:** `FAIL (Not Detected)` (Confidence: 0.0%).<br>**Root Cause:** Enclosure positioned $<15\text{ cm}$ from lens, causing camera peripheral blur and geometric boundary truncation outside the frame. |
+| **Scenario 2: Side Profile Miss** | ![Side View Miss](./visual_evidence/error_scenario_2_side_view_miss.jpg) | **Observed State:** `STATUS: SCANNING (No Enclosure Detected)` (`Latency: 408.9ms`).<br>**Cause:** At a 90° edge profile the front circular lens recess disappears, dropping confidence below the `0.35` gate. |
+| **Scenario 8: Complex Background Confusion** | ![Complex BG Miss](./visual_evidence/error_scenario_8_complex_bg_miss.jpg) | **Observed State:** Handheld enclosure in upper-left missed while circular webcam aperture triggered a **41.3%** box (`FPS: 3.5`).<br>**Cause:** Specular glare on the handheld plastic housing lowered edge contrast while the circular dark lens matched aperture features. |
+| **Scenario 4: Near / Off-Axis Handheld Miss** | ![Near Distance Miss](./visual_evidence/error_scenario_4_near_distance_miss.jpg) | **Observed State:** `STATUS: SCANNING (No Enclosure Detected)` (`Latency: 271.2ms`).<br>**Cause:** Holding the enclosure tilted under overhead glare blurs surface contrast and pushes activation score just below the `0.35` threshold. |
 
 ---
 
